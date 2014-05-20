@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: com.frantz-drewio.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.frantz_drewio.ui.Activator
+Bundle-Vendor: FRANTZ-DREWIO
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.frantz.drewio;bundle-version="1.0.0",
+ org.eclipse.zest.core;bundle-version="1.5.0",
+ org.eclipse.zest.layouts;bundle-version="1.1.0",
+ org.eclipse.ui.console,
+ org.eclipse.jdt.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,40 @@
+
+grammar com.frantz.drewio.DrewIO with org.eclipse.xtext.common.Terminals
+
+generate drewIO "http://www.frantz.com/drewio/DrewIO"
+
+Model:
+	statements+=Statement*;
+	
+Statement:
+		(InputStatement | OutputStatement)
+;	
+
+InputStatement:
+	'input' name=ID 
+	'{' 
+		('type' '('  columns+=Column ( ',' columns+=Column )* ')' )? ';'
+	'}' 
+;
+
+OutputStatement:
+	'output' name=ID 'receives' inputs+=[Statement] ( ',' inputs+=[Statement] )*
+	'{' 
+		(methods+=OnRecieved ( ',' methods+=OnRecieved )*)?
+	'}' 
+;
+
+OnRecieved:
+	'on' name=[Statement] 
+	'{'
+	'}'	
+	
+;
+
+Column:
+    name=ID type=DataType;
+
+
+DataType:
+	'boolean' | 'string' | 'integer' | 'float';
+	
