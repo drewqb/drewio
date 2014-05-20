@@ -17,5 +17,6 @@ public class Messages extends NLS {
 	public static String LAYOUT_HORIZONTAL_MNU;
 	public static String LAYOUT_VERTICAL_MNU;
 	public static String RUN_SCRIPT_MNU;
+	public static String STUDIO_CONSOLE;
 	
 }

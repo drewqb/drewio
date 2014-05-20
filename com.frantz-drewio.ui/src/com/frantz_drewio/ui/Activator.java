@@ -1,8 +1,16 @@
 package com.frantz_drewio.ui;
 
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.ui.console.ConsolePlugin;
+import org.eclipse.ui.console.IConsole;
+import org.eclipse.ui.console.MessageConsole;
+import org.eclipse.ui.console.MessageConsoleStream;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
+
+import com.frantzdrewio.i18n.Messages;
+import com.frantzdrewio.sdk.IStudio;
+import com.frantzdrewio.sdk.Studio;
 
 /**
  * The activator class controls the plug-in life cycle
@@ -14,13 +22,16 @@ public class Activator extends AbstractUIPlugin {
 
 	// The shared instance
 	private static Activator plugin;
+	private MessageConsoleStream myAuthoringMsgStream;
+	private MessageConsole myAuthoringConsole;
+	private IStudio myStudio = new Studio();
 	
-	/**
-	 * The constructor
-	 */
 	public Activator() {
 	}
-
+	public IStudio getStudio()
+	{
+		return myStudio;
+	}
 	/*
 	 * (non-Javadoc)
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
@@ -58,4 +69,27 @@ public class Activator extends AbstractUIPlugin {
 	public static ImageDescriptor getImageDescriptor(String path) {
 		return imageDescriptorFromPlugin(PLUGIN_ID, path);
 	}
+	public void logMessage(String s)
+	{
+		getAuthoringConsoleStream().println(s);
+	}
+	
+	
+	public MessageConsoleStream getAuthoringConsoleStream()
+	{
+		if(this.myAuthoringMsgStream == null)
+		{
+			myAuthoringMsgStream = getAuthoringMessageConsole().newMessageStream();
+		}
+		return myAuthoringMsgStream;
+	}
+	private MessageConsole getAuthoringMessageConsole()
+	{
+		if(myAuthoringConsole == null)
+		{
+			myAuthoringConsole = new MessageConsole(Messages.STUDIO_CONSOLE, null); 
+			ConsolePlugin.getDefault().getConsoleManager().addConsoles(new IConsole[]{ myAuthoringConsole });
+		}
+		return myAuthoringConsole;
+	}   
 }
