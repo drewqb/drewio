@@ -10,7 +10,7 @@ import org.osgi.framework.BundleContext;
 
 import com.frantzdrewio.i18n.Messages;
 import com.frantzdrewio.sdk.IStudio;
-import com.frantzdrewio.sdk.Studio;
+import com.frantzdrewio.sdk.internal.Studio;
 
 /**
  * The activator class controls the plug-in life cycle

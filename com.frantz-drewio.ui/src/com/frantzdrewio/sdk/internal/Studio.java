@@ -1,6 +1,7 @@
-package com.frantzdrewio.sdk;
+package com.frantzdrewio.sdk.internal;
 
 import com.frantz_drewio.ui.Activator;
+import com.frantzdrewio.sdk.IStudio;
 
 public class Studio implements IStudio{
 
