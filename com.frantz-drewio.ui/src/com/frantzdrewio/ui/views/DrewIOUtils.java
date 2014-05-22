@@ -28,7 +28,7 @@ public class DrewIOUtils {
 		for(Statement t : root.getStatements())
 		{
 				GraphNode refNode = new GraphNode(theGraph, SWT.NONE, t.getName());
-				refNode.setBackgroundColor(ColorConstants.yellow);
+				refNode.setBackgroundColor(ColorConstants.lightBlue);
 				theMap.put(t, refNode);
 				
 		}

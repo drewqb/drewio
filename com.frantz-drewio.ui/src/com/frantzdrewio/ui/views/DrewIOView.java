@@ -270,7 +270,7 @@ public class DrewIOView extends ViewPart // implements ITabbedPropertySheetPageC
 		
 		
 	}
-	void openModel(String theFile)
+	public void openModel(String theFile)
 	{
 		myModel = DrewIOUtils.createModel(theFile);
 		if(myModel==null) return;

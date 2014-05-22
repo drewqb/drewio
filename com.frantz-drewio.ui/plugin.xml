@@ -43,5 +43,46 @@
             name="DrewIO">
       </perspective>
    </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.frantzdrewio.ui.commands.ShowInViewer"
+            commandId="com.frantzdrewio.ui.commands.ShowInViewer">
+         <activeWhen>
+            <or>
+               <reference
+                     definitionId="com.frantz.drewio.DrewIO.Editor.opened">
+               </reference>
+            </or>
+         </activeWhen>
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+         <command
+            categoryId="org.eclipse.ui.category.edit"
+            id="com.frantzdrewio.ui.commands.ShowInViewer"
+            name="Switch to Visual">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:#TextEditorContext?after=group.open">
+         <command
+               commandId="com.frantzdrewio.ui.commands.ShowInViewer"
+               label="Show in Visual"
+               style="push"
+               tooltip="Show in Visual">
+            <visibleWhen
+                  checkEnabled="false">
+               <reference
+                     definitionId="com.frantz.drewio.DrewIO.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
 
 </plugin>
