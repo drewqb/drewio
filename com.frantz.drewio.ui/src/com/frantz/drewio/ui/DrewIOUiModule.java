@@ -12,4 +12,7 @@ public class DrewIOUiModule extends com.frantz.drewio.ui.AbstractDrewIOUiModule 
 	public DrewIOUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
+
+	
+	
 }
