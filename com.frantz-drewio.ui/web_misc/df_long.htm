@@ -2,9 +2,13 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Resume of Software Engineer Drew Frantz">
+  <meta name="description" content="Resume of Software Engineer Drew Frantz 08057">
   <meta name="author" content="Drew Frantz - drew@acm.org">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Software Engineer, 08057, Java, C++, Complex Event Processing, 
+  	Eclipse plugin, EMF, GEF, xText, SWT, RCP, 
+  	XML, UML, html5, JavaScript, Agile, Scrum Master, Lex, Yacc, Visual Parse++">
+  
   <link rel="stylesheet" type="text/css" href="df_style.css">
     <title>Drew Frantz</title>
     
@@ -19,6 +23,7 @@ function populateOptions(theList, options)
         var el = document.createElement("dd");
         el.textContent = opt;
         el.value = opt;
+        el.title=opt;
        	select.appendChild(el);
      }
 }
@@ -30,6 +35,7 @@ function populateOptionsWithTitle(theList, options,theTitle)
 	var dt = document.createElement("dt");
   	dt.textContent = theTitle;
     dt.value = theTitle;
+    dt.title=theTitle;
     select.appendChild(dt);
     
     populateOptions(theList, options);
@@ -45,7 +51,7 @@ function populateList()
     var inprogress = ["JavaScript", "html5","css", "Git"];
     populateOptionsWithTitle("Skills", inprogress, "Work in progress tools");
 	
-    var prior = ["C++", "Visual Studio","COM", "XML", "Clearcase", "UML"];
+    var prior = ["C++", "Visual Studio","COM", "XML", "Clearcase", "UML", "Yacc", "Lex", "Visual Parse++"];
     populateOptionsWithTitle("Skills", prior, "Prior tools");
 	   
 	
@@ -64,15 +70,24 @@ function populateList()
                 "guitar", "philly sports"];
 	populateOptions("Interests", misc);
 }
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-51500091-1', 'comcast.net');
+  ga('send', 'pageview');
 
 </script>
 </head>
 <body onload="populateList()">
 	<header class="Drew">
-    	<h1 class="name">Drew Frantz</h1>
+    	<h1 class="name" title="Drew Frantz, Software Engineer, 08057">Drew Frantz</h1>
         <h2 class="role">Software Engineer</h2>
     	<ul class="contact">
+        	<li ><a href="http://home.comcast.net/~drewqb/df_long.htm" title="Drew Frantz">Home</a></li>
         	<li class="email"><a href="mailto:drew@acm.org" >drew@acm.org</a></li>
             <li class="tel">609-504-4869</li>
         	<li ><a href="https://www.linkedin.com/in/drewfrantz" title="Drew Frantz - LinkedIn">Drew Frantz - LinkedIn</a></li>
@@ -82,7 +97,7 @@ function populateList()
 
 	<section id="summary">
     	<h1>Summary</h1>
-        <p>Seasoned Software Engineering Lead with a high tolerance for ambiguity and a track record for creating new software products in a timely manner. Since 1995 I have been building software development tools for SAP, Sybase, Aleri, IBM and Rational. During my career I have been very fortunate to work on some outstanding teams including the teams that built and brought to market a number of model driven development tools including: SAP Hana ESP, ESP Studio, Aleri Streaming Platform, Rational Software Architect, Rational XDE and Rational Rose. To every assignment I bring a proven track record of building and delivering commercial software as well as the determination and grit required for finishing the job.</p>
+        <p>Professional software engineer with a high tolerance for ambiguity and a track record for creating new software products on time. During my career I have worked on numerous software development projects with a variety of software companies including SAP, Sybase, Aleri, IBM, Microsoft and Rational and have help bring to market products such as SAP Hana ESP, Aleri Streaming Platform, Rational Software Architect, Rational XDE, Visual Studio Modeler and Rational Rose. To every assignment I bring a passion for software development, experience in product development and the grit and commitment required for completing the job.</p>
         	
     </section>
     <section id="experience">
@@ -90,12 +105,12 @@ function populateList()
     	<article>
     		<ul>
 				<li>Development lead experience on numerous projects</li>
-				<li>Experience working with local and virtual engineering teams</li>
-				<li>Influence teams (without formal authority)</li>
-				<li>Effectively articulate and defend ideas</li>
 				<li>Foster an environment of team hustle</li>
-				<li>Lead and mentor engineers</li>
 				<li>Codify sketchy requirements into functional software</li>
+				<li>Lead and mentor engineers</li>
+				<li>Experience working with local and virtual engineering teams</li>
+				<li>Effectively articulate and defend ideas</li>
+				<li>Influence teams (without formal authority)</li>
 				<li>Absorb and become productive in new technologies</li>
 			</ul>
 		</article>
