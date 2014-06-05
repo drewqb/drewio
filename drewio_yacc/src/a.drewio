@@ -1,0 +1,15 @@
+input aa 
+{ 
+  type (qqq int, www string);
+}
+input bb 
+{ 
+  type (qqq int, www string, zz string);
+}
+
+output cc recieves aa,bb
+{
+  
+  type (qqq int, www string);
+  
+}
