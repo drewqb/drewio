@@ -26,5 +26,6 @@ STATEMENT *createStatement(char *nm);
 COLUMN *createColumn(char *nm, char *type);
 
 void generateModel(STATEMENT *root);
+void freeModel(STATEMENT *root);
 
 #endif

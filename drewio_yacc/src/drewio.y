@@ -34,7 +34,11 @@
 
 %%
 program:
-	statements {generateModel($1);}
+	statements 
+	{
+		generateModel($1);
+		freeModel($1);
+	}
 	
 statements: 
 		statement |

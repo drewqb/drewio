@@ -1659,20 +1659,4 @@ static void comment(void)
     yyerror("unterminated comment");
 }
 
-int check_type()
-{
-/*
-* pseudo code --- this is what it should check
-*
-*	if (yytext == type_name)
-*		return(TYPE_NAME);
-*
-*	return(IDENTIFIER);
-*/
 
-/*
-*	it actually will only return IDENTIFIER
-*/
-
-	return(IDENTIFIER);
-}

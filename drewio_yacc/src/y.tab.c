@@ -448,8 +448,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    37,    37,    40,    41,    55,    56,    61,    74,    87,
-      88,    91,    96,   102,   114,   115
+       0,    37,    37,    44,    45,    59,    60,    65,    78,    91,
+      92,    95,   100,   106,   118,   119
 };
 #endif
 
@@ -1366,14 +1366,17 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 37 "drewio.y"
-    {generateModel((yyvsp[(1) - (1)].pState));}
+#line 38 "drewio.y"
+    {
+		generateModel((yyvsp[(1) - (1)].pState));
+		freeModel((yyvsp[(1) - (1)].pState));
+	}
     break;
 
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 42 "drewio.y"
+#line 46 "drewio.y"
     {
 			int no=2; 
             STATEMENT *temp=(yyval.pState);
@@ -1389,7 +1392,7 @@ yyreduce:
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 66 "drewio.y"
+#line 70 "drewio.y"
     { 
 		STATEMENT *theState = createStatement((yyvsp[(2) - (9)].str));
 		theState->columns=(yyvsp[(6) - (9)].pColumn);
@@ -1401,7 +1404,7 @@ yyreduce:
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 78 "drewio.y"
+#line 82 "drewio.y"
     { 
 		STATEMENT *theState = createStatement((yyvsp[(2) - (11)].str));
 		theState->columns=(yyvsp[(8) - (11)].pColumn);
@@ -1413,7 +1416,7 @@ yyreduce:
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 92 "drewio.y"
+#line 96 "drewio.y"
     { 
 		COLUMN *theCol = createColumn((yyvsp[(1) - (2)].str), "int");
 		(yyval.pColumn)=theCol;
@@ -1423,7 +1426,7 @@ yyreduce:
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 97 "drewio.y"
+#line 101 "drewio.y"
     { 
 		COLUMN *theCol = createColumn((yyvsp[(1) - (2)].str), "double");
 		(yyval.pColumn)=theCol;
@@ -1434,7 +1437,7 @@ yyreduce:
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 103 "drewio.y"
+#line 107 "drewio.y"
     { 
 		COLUMN *theCol = createColumn((yyvsp[(1) - (2)].str), "string");
 		(yyval.pColumn)=theCol;
@@ -1446,7 +1449,7 @@ yyreduce:
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 116 "drewio.y"
+#line 120 "drewio.y"
     {
             COLUMN *temp=(yyval.pColumn);
 			while(temp->next)
@@ -1460,7 +1463,7 @@ yyreduce:
 
 
 /* Line 1455 of yacc.c  */
-#line 1464 "y.tab.c"
+#line 1467 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1672,7 +1675,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 129 "drewio.y"
+#line 133 "drewio.y"
 
 
 

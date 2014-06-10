@@ -40,3 +40,23 @@ void generateModel(STATEMENT *theList)
    	}
 
 }
+
+void freeModel(STATEMENT *theList)
+{
+
+	STATEMENT *ptr=theList;
+	while(ptr)
+	{
+   		COLUMN *pcol = ptr->columns;
+		while(pcol)
+		{
+			COLUMN *pDel = pcol;
+			pcol=pcol->next;
+			free(pDel);
+		}
+		STATEMENT *pStDel = ptr;
+   		ptr=ptr->next;
+   		free(pStDel);
+   	}
+
+}
