@@ -7,6 +7,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.hotroute.web1.client.DrewIOService;
 import com.hotroute.web1.shared.FieldVerifier;
 import com.hotroute.web1.shared.StockPrice;
+import com.hotroute.web1.shared.WeatherReport;
 
 /**
  * The server-side implementation of the RPC service.
@@ -22,6 +23,7 @@ public class DrewIOServiceImpl extends RemoteServiceServlet implements 	DrewIOSe
 			"http://home.comcast.net/~drewqb/portfolioweb/rt1.png",
 	"http://home.comcast.net/~drewqb/portfolioweb/cp1.png"};
 
+	private static final double MAX_TEMP = 99.0; 
 	private static final double MAX_PRICE = 100.0; // $100.00
 	private static final double MAX_PRICE_CHANGE = 0.02; // +/- 2%
 	public StockPrice[] getPrices(String[] symbols) {
@@ -85,5 +87,17 @@ public class DrewIOServiceImpl extends RemoteServiceServlet implements 	DrewIOSe
 		buildMap();
 
 		return m_pictures.get(key);
+	}
+	@Override
+	public WeatherReport getWeather(String zip) {
+		Random rnd = new Random();
+		String [] desc = {"clear and sunny", "possible showers", "partly cloudy"};
+		
+		double temp = rnd.nextDouble() * MAX_TEMP;
+		int idx = rnd.nextInt(desc.length-1);
+		
+		WeatherReport rep = new WeatherReport(zip, temp, desc[idx]);
+		
+		return rep;
 	}
 }

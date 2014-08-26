@@ -14,6 +14,7 @@ public class Gwt1 implements EntryPoint {
 
 	PushButton showStocks;
 	PushButton showOther;
+	PushButton showBinder;
 	
 	MainPanel mainPanel = new MainPanel();
 	StockPanel stockPanel = new StockPanel();
@@ -21,18 +22,22 @@ public class Gwt1 implements EntryPoint {
 	HorizontalPanel nowShowingPanel = new HorizontalPanel();
 	StackPanel stackPanel = new StackPanel();
 
+	BinderSample binderPanel = new BinderSample();
+	
 	public void onModuleLoad()
 	{
 
 		showStocks = new PushButton("Stock Panel");
 		showOther = new PushButton("Image Panel");
+		showBinder = new PushButton("Binder Panel");
+		
 		stackPanel.setWidth("250px");
 		
 		VerticalPanel drawer1 = new VerticalPanel();
 
 		drawer1.add(showStocks);
 		drawer1.add(showOther);
-		
+		drawer1.add(showBinder);
 		
 		stackPanel.add(drawer1, "Examples");
 
@@ -40,13 +45,30 @@ public class Gwt1 implements EntryPoint {
 		
 		
 		nowShowingPanel.add(stackPanel);
-
 		nowShowingPanel.add(mainPanel);
-		//stockPanel.create(nowShowingPanel);
+		
+		
 		hookShowOther();
 		hookShowStock();
+		hookBinder();
 		
 		RootPanel.get().add(nowShowingPanel);
+	}
+	void hookBinder()
+	{
+		showBinder.addClickHandler( new ClickHandler() 
+		{
+			public void onClick(ClickEvent event) {
+				showBinder.setEnabled(false);
+
+				nowShowingPanel.remove(1);
+				nowShowingPanel.add(binderPanel);
+
+				showBinder.setEnabled(true);
+
+			}
+		});
+		
 	}
 	void hookShowOther()
 	{

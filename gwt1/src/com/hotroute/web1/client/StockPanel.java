@@ -62,13 +62,14 @@ public class StockPanel extends VerticalPanel{
 
 		
 
+		this.add(sendButton);
 		this.add(h1);
 		this.add(h2);
 
-		h1.add(sendButton);
+		
+		
 		h1.add(lbResults);
 		h1.add(table);
-		
 		
 		sendButton.addClickHandler( new ClickHandler() 
 		{
