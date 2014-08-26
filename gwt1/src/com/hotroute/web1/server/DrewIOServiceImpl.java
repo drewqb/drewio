@@ -3,6 +3,9 @@ package com.hotroute.web1.server;
 import java.util.HashMap;
 import java.util.Random;
 
+import com.google.gwt.json.client.JSONNumber;
+import com.google.gwt.json.client.JSONObject;
+import com.google.gwt.json.client.JSONString;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.hotroute.web1.client.DrewIOService;
 import com.hotroute.web1.shared.FieldVerifier;
@@ -92,12 +95,48 @@ public class DrewIOServiceImpl extends RemoteServiceServlet implements 	DrewIOSe
 	public WeatherReport getWeather(String zip) {
 		Random rnd = new Random();
 		String [] desc = {"clear and sunny", "possible showers", "partly cloudy"};
-		
+
 		double temp = rnd.nextDouble() * MAX_TEMP;
 		int idx = rnd.nextInt(desc.length-1);
-		
+
 		WeatherReport rep = new WeatherReport(zip, temp, desc[idx]);
-		
+
 		return rep;
 	}
+	@Override
+	public String getJsonPrices(String[] symbols) {
+		Random rnd = new Random();
+		
+		StringBuffer b = new StringBuffer();
+		// {"balance": 1000.21, "num":100, "is_vip":true, "name":"foo"}
+		b.append('{');
+		b.append("\"values\":");
+		b.append('[');
+		for(String sym : symbols)
+		{
+			double price = rnd.nextDouble() * MAX_PRICE;
+			double change = price * MAX_PRICE_CHANGE * (rnd.nextDouble() * 2f - 1f);
+			b.append('{');
+			
+			b.append("\"symbol\":");
+			b.append('"');
+			b.append(sym);
+			b.append('"');
+			b.append(',');
+			
+			b.append("\"price\":");
+			b.append(price);
+			b.append(',');
+			
+			b.append("\"change\":");
+			b.append(change);
+			
+			b.append('}');
+			b.append(',');
+		}
+		b.append(']');
+		b.append('}');
+		return b.toString();
+	}
+	
 }

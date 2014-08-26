@@ -13,4 +13,5 @@ public interface DrewIOService extends RemoteService {
 	StockPrice[] getPrices(String[] symbols);
 	String getPictureUrl(String key);
 	WeatherReport getWeather(String zip);
+	String getJsonPrices(String[] symbols);
 }

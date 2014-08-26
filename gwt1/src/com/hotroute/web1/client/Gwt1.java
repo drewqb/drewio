@@ -4,6 +4,7 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.shared.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.PushButton;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -34,15 +35,23 @@ public class Gwt1 implements EntryPoint {
 		stackPanel.setWidth("250px");
 		
 		VerticalPanel drawer1 = new VerticalPanel();
-
-		drawer1.add(showStocks);
+		VerticalPanel drawer2 = new VerticalPanel();
+		
 		drawer1.add(showOther);
+		drawer1.add(showStocks);
 		drawer1.add(showBinder);
 		
 		stackPanel.add(drawer1, "Examples");
+		stackPanel.add(drawer2, "TBD");
 
-
-		
+		PushButton tbd1 = new PushButton("TBD1");
+		tbd1.addClickHandler( new ClickHandler() 
+		{
+			public void onClick(ClickEvent event) {
+				Window.alert("Tbd1");
+			}
+		});
+		drawer2.add(tbd1);
 		
 		nowShowingPanel.add(stackPanel);
 		nowShowingPanel.add(mainPanel);

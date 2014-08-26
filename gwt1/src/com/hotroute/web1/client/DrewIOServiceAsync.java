@@ -10,4 +10,5 @@ public interface DrewIOServiceAsync {
 	void getPrices(String[] symbols, AsyncCallback<StockPrice[]> callback);
 	void getPictureUrl(String key, AsyncCallback<String> callback);
 	void getWeather(String zip, AsyncCallback<WeatherReport> callback);
+	void getJsonPrices(String[] symbols, AsyncCallback<String> callback);
 }
