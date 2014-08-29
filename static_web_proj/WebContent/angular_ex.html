@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Angular Sandbox - Drew Frantz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  <style>
+table, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>  
+  </head>
+<body>
+
+<div ng-app="" ng-controller="hotrouteController">
+
+ 
+<p>Call: <input type="text" ng-model="myCall" ></p>
+<p>Result: <input type="text" ng-model="myResult"></p>
+<p>Person: <input type="text" ng-model="person.firstName"></p>
+
+<button ng-click="handleClick()">Reset</button>
+
+
+<p>Call equals:  {{ myCall }}   </p>
+<p>Result expression: {{1 * myResult + 5 }}</p>
+<p>Name: {{person.firstName }}</p>
+<p> Add more fruits :  <input type="text" ng-model="newFruit"> </p>
+<button ng-click="addFruit()">Add</button> 
+<p> Selected fruit : {{selectedFruit}} </p>
+
+<select 
+	ng-model="selectedFruit" ng-options="fruit for fruit in fruits">
+</select>
+<ul><li ng-repeat="fruit in fruits">{{fruit}}</li></ul>
+
+<table>
+  <tr ng-repeat="x in names">
+    <td>{{ x.Name }}</td>
+    <td>{{ x.Country }}</td>
+  </tr>
+</table>
+
+</div>
+
+<script>
+
+function hotrouteController($scope) {
+    $scope.myCall= "800 Z Slant";
+    $scope.myResult= "0";
+    $scope.handleClick = function() {
+        $scope.myCall = 'Reset 800 Z Slant';
+    };
+	$scope.person = 
+	{
+        firstName: "Drew",
+        lastName: "Frantz"
+    };
+    $scope.fruits=['apple','mango','banana'];
+    $scope.types=['aaa','bbb','ccc'];
+    $scope.names = [
+    {Name: 'aaa', Country: 'bbb'},
+    {Name: 'ooo', Country: 'ppp'},
+    {Name: 'yyy', Country: 'zzz'},
+    ];
+    $scope.addFruit=function(){
+            $scope.fruits.push($scope.newFruit);
+        }
+    
+}
+</script>
+
+</body>
+</html>
