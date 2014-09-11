@@ -1,4 +1,13 @@
-input Input1 { type ( Col integer ) ; } input Input2 { type ( Col integer ) ; }
-input Input3 { type ( Col integer ) ; } input Input4 { type ( Col integer ) ;
-} output Output1 receives Input1 { } output Output2 receives Input1 { } output
-Output3 receives Input1 { } output Output4 receives Input1 { }
+input Input1 { type ( Col integer ) ; } 
+input Input2 { type ( Col integer ) ; }
+input Input3 { type ( Col integer ) ; } 
+input Input4 { type ( Col integer ) ;
+} 
+output Output1 receives Input1 { } 
+output Output2 receives Input1 { } 
+output Output3 receives Input1 { } 
+output Output4 receives Input1 { }
+
+output Output4a receives Output4 { }
+output Output4b receives Output4 { }
+output Output4c receives Output4 { }

@@ -26,7 +26,12 @@ import org.eclipse.ui.ISharedImages;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
+import org.eclipse.ui.views.properties.IPropertySheetPage;
+import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributor;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
+import org.eclipse.zest.core.viewers.GraphViewer;
 import org.eclipse.zest.core.widgets.Graph;
+import org.eclipse.zest.core.widgets.GraphConnection;
 import org.eclipse.zest.core.widgets.GraphNode;
 import org.eclipse.zest.layouts.LayoutAlgorithm;
 import org.eclipse.zest.layouts.LayoutStyles;
@@ -39,7 +44,7 @@ import com.frantzdrewio.i18n.Messages;
 
 
 
-public class DrewIOView extends ViewPart // implements ITabbedPropertySheetPageContributor 
+public class DrewIOView extends ViewPart implements ITabbedPropertySheetPageContributor 
 {
 
 	/**
@@ -54,20 +59,28 @@ public class DrewIOView extends ViewPart // implements ITabbedPropertySheetPageC
 	private Action myRunScript;
 	
 
-	private Graph myGraph;
+	//private Graph myGraph;
 	private LayoutAlgorithm myLayout;
 	private SashForm mySash;
 	private Composite myCanvas;
 	private Text myOutput;
 	private Model myModel;
-	
+	private GraphViewer viewer;
 	public DrewIOView() {
 	}
 
-	/**
-	 * This is a callback that will allow us
-	 * to create the viewer and initialize it.
-	 */
+	
+
+	@Override
+	public Object getAdapter(Class type) {
+		if(type.equals(IPropertySheetPage.class))
+		{
+			return new TabbedPropertySheetPage(this);
+		}
+		return super.getAdapter(type);
+	}
+
+
 	public void createPartControl(Composite myShell) {
 
 		
@@ -79,8 +92,16 @@ public class DrewIOView extends ViewPart // implements ITabbedPropertySheetPageC
 		myCanvas = new Composite(mySash, SWT.NONE);
 		myOutput = new  Text(mySash, SWT.BORDER | SWT.READ_ONLY | SWT.V_SCROLL | SWT.H_SCROLL);
 		myCanvas.setLayout(new FillLayout());
-		
-		
+			
+		viewer = new GraphViewer(myCanvas, SWT.BORDER);
+		//viewer.setContentProvider(new ZestNodeContentProvider());
+	    //viewer.setLabelProvider(new ZestLabelProvider());
+	    //NodeModelContentProvider model = new NodeModelContentProvider();
+	    //viewer.setInput(model.getNodes());
+	    //LayoutAlgorithm layout = setLayout();
+	    //viewer.setLayoutAlgorithm(layout, true);
+	    //viewer.applyLayout();
+	    
 		mySash.setWeights(new int[]{7, 3});
 		
 		
@@ -89,7 +110,8 @@ public class DrewIOView extends ViewPart // implements ITabbedPropertySheetPageC
 		hookDoubleClickAction();
 		contributeToActionBars();
 		
-		//getSite().setSelectionProvider(myGraph);
+		getSite().setSelectionProvider(viewer);
+		
 	}
 
 	private void hookContextMenu() {
@@ -173,10 +195,10 @@ public class DrewIOView extends ViewPart // implements ITabbedPropertySheetPageC
 		
 		myLayoutHorizontalAction = new Action() {
 			public void run() {
-				if(myGraph!=null)
+				if(viewer.getGraphControl()!=null)
 				{
 					myLayout=new HorizontalTreeLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING);
-					myGraph.setLayoutAlgorithm(myLayout, true);
+					viewer.getGraphControl().setLayoutAlgorithm(myLayout, true);
 				}
 			}
 		};
@@ -187,10 +209,10 @@ public class DrewIOView extends ViewPart // implements ITabbedPropertySheetPageC
 		
 		myLayoutverticalAction = new Action() {
 			public void run() {
-				if(myGraph!=null)
+				if(viewer.getGraphControl()!=null)
 				{
 					myLayout=new TreeLayoutAlgorithm(LayoutStyles.NO_LAYOUT_NODE_RESIZING|LayoutStyles.ENFORCE_BOUNDS);
-					myGraph.setLayoutAlgorithm(myLayout, true);
+					viewer.getGraphControl().setLayoutAlgorithm(myLayout, true);
 				}
 			}
 		};
@@ -245,16 +267,30 @@ public class DrewIOView extends ViewPart // implements ITabbedPropertySheetPageC
 		myCanvas.setFocus();
 	}
 	
-	
+	void disposeGraphContents(Graph g)
+	{
+			Object[] connections = g.getConnections().toArray() ; 
+			for ( int x = 0 ; x<connections.length;x++)
+			{
+				((GraphConnection) connections[x]).dispose() ; 
+			} 
+			Object[] nodes = g.getNodes().toArray() ; 
+			for ( int x = 0 ; x<nodes.length;x++)
+			{
+				((GraphNode) nodes[x]).dispose() ; 
+			}
+
+	}
 	void buildGraph(Composite parent, Model root)
 	{
-		if(myGraph!=null)
+		/*if(myGraph!=null)
 		{
 			myGraph.dispose();
 			myGraph=null;
 		}
-		myGraph= new Graph(parent, SWT.NONE);
-		
+		myGraph= new Graph(parent, SWT.NONE);*/
+		Graph myGraph = viewer.getGraphControl();
+		disposeGraphContents(myGraph);
 		Map<Statement, GraphNode> theMap = new HashMap<Statement, GraphNode>();
 		DrewIOUtils.buildGraphNodes(myGraph, theMap, root);
 		DrewIOUtils.buildGraphEdges(myGraph, theMap, root);
@@ -309,6 +345,12 @@ public class DrewIOView extends ViewPart // implements ITabbedPropertySheetPageC
 			d.setMessage(e.getMessage());
 			d.open();
 		}
+	}
+
+	@Override
+	public String getContributorId() {
+		// TODO Auto-generated method stub
+		return "com.frantz-drewio.ui.propertyContributor1";
 	}
 	
 }

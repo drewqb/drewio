@@ -84,5 +84,41 @@
          </command>
       </menuContribution>
    </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="com.frantz-drewio.ui.propertyContributor1"
+            labelProvider="com.frantzdrewio.ui.properties.TabLabelProvider"
+            typeMapper="com.frantzdrewio.ui.properties.TypeMapper">
+         <propertyCategory
+               category="DrewIO">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="com.frantz-drewio.ui.propertyContributor1">
+         <propertyTab
+               category="DrewIO"
+               id="com.frantz-drewio.ui.properties.general"
+               label="General">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="com.frantz-drewio.ui.propertyContributor1">
+         <propertySection
+               class="com.frantzdrewio.ui.properties.StatementSection"
+               id="com.frantz-drewio.ui.propertySection1"
+               tab="com.frantz-drewio.ui.properties.general">
+            <input
+                  type="com.frantz.drewio.drewIO.Statement">
+            </input>
+         </propertySection>
+      </propertySections>
+   </extension>
 
 </plugin>

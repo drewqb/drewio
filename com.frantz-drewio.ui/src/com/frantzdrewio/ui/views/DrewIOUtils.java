@@ -29,6 +29,7 @@ public class DrewIOUtils {
 		{
 				GraphNode refNode = new GraphNode(theGraph, SWT.NONE, t.getName());
 				refNode.setBackgroundColor(ColorConstants.lightBlue);
+				refNode.setData(t);
 				theMap.put(t, refNode);
 				
 		}
@@ -85,14 +86,21 @@ public class DrewIOUtils {
 			root.getStatements().add(in);
 			
 		}
+		OutputStatement out=null;
 		for(int x=1;x<5;x++)
 		{
-			OutputStatement out = DrewIOFactory.eINSTANCE.createOutputStatement();
+			out = DrewIOFactory.eINSTANCE.createOutputStatement();
 			out.setName("Output" + x);
 			out.getInputs().add(root.getStatements().get(0));
 			root.getStatements().add(out);
 		}
-		
+		for(int x=1;x<3;x++)
+		{
+			OutputStatement newOut = DrewIOFactory.eINSTANCE.createOutputStatement();
+			newOut.setName(out.getName() + "_" + x);
+			newOut.getInputs().add(out);
+			root.getStatements().add(newOut);
+		}
 		try
 		{
 			SaveOptions saveOptions = SaveOptions.newBuilder().getOptions();
