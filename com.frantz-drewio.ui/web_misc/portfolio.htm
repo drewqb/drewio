@@ -10,9 +10,70 @@
  <meta name="keywords" content="Software Engineering Professional, Development Lead, Software Architect, 08057, Java, C++, Complex Event Processing, 
   	Eclipse plugin, EMF, GEF, xText, SWT, RCP, 
   	XML, UML, html5, JavaScript, Agile, Scrum Master, Lex, Yacc, Visual Parse++">
+<script>
+function createAssignmentTable(rowData)
+{
+	var theSection = document.getElementById("Assignments");
+ 	if(theSection==null) return;
+ 	
+   	var theTable = document.createElement("TABLE");
+ 	theTable.setAttribute("id", "assignmentsTable");
+ 	
+ 	var header = theTable.createTHead();
+ 	var row = header.insertRow();
+ 	
+ 	for (var i = 0; i < rowData.length; i++) 
+	{
+      	 var cell1 = row.insertCell(i);
+		 cell1.innerHTML = "<b>" + rowData[i] + "</b>";
+	 }
+ 	
+ 	theSection.appendChild(theTable);
+ 	return theTable;
+}
+function populateTable(theTable, rowData)
+{
+	
+ 	var row = theTable.insertRow();
+ 	
+ 	for (var i = 0; i < rowData.length; i++) 
+	{
+      	 var cell1 = row.insertCell(i);
+		 cell1.innerHTML = rowData[i];;
+	 }
+    
+}
+function buildAssignments()
+{
+	var headers= ["Product/Project", "Language", "Technologies"];
+	var theTable = createAssignmentTable(headers);
+	
+
+	var sapProj= ["SAP Hana ESP, SAP Sybase ESP Studio, all versions", "Java", "Eclipse, RCP, EMF, GEF, SWT, JFace, xText,junit, jdbc, ant, XML, XSD, Agile/Scrum,  DSL, Hana, complex event processing"];
+	populateTable(theTable, sapProj);
+	
+	var aleriProj= ["Aleri Streaming Platform , all versions", "Java", "Eclipse, RCP, EMF, GEF, SWT, JFace, junit, jdbc, ant, ssh, XML, XSD, complex event processing"];
+	populateTable(theTable, aleriProj);
+	
+	var ibmrsa= ["Rational Software Architect", "Java", "Eclipse, EMF, GEF, SWT, UML"];
+	populateTable(theTable, ibmrsa);
+	
+	var ratlxde= ["Rational XDE and Visual Studio Modeler", "C++", "Visual Studio, STL, ATL, GDI, DDS (Davinci drawing surface) COM, VS.NET SDK (VSIP), UML 1.x"];
+	populateTable(theTable, ratlxde);
+	
+	var codepatt= ["CodePattern", "C++", "Visual Studio, STL, ATL, MFC,lexx,yacc,VisualParse"];
+	populateTable(theTable, codepatt);
+	
+	var Freshlook= ["Freshlook", "C++", "Visual Studio, DirectX, STL, ATL, MFC,lexx,yacc,VisualParse"];
+	populateTable(theTable, Freshlook);
+	
+	var rose4= ["Rational Rose 2.7-4.0", "C++", "Visual Studio, STL, ATL, MFC, GDI, COM, OLE automation, Java, CORBA IDL, Oracle8, VisualParse, UML, Booch, OMT"];
+	populateTable(theTable, rose4);
+	
+}
+</script>
   
-<body>
-<body>
+<body onload="buildAssignments()" >
 	<header class="Drew">
     	<h1 class="name">Drew Frantz</h1>
         <h2 class="role">Software Engineering Professional, Development Lead, Software Engineer/Architect</h2>
@@ -24,7 +85,12 @@
             <li ><a href="https://github.com/drewqb/drewio" title="Drew Frantz - Github">Github (New)</a></li>
 		</ul>
     </header>
-
+    <section id="skills">
+    	<h1>Assignments</h1>
+        <dl id="Assignments">
+        </dl>
+    </section>
+    
 	<section id="projects">
     	<h1>Projects</h1>
          <article>

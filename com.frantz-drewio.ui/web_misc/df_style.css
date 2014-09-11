@@ -8,7 +8,6 @@ html {background: #FCFCFC; color: #333; font-family: 'PT Sans',sans-serif; heigh
 body {height: 100%; margin: 0 auto; max-width: 978px; padding: 10px}
 a, #skills dl dd {-webkit-transition: all 0.15s ; -moz-transition: all 0.15s ; -ms-transition: all 0.15s ; -o-transition: all 0.15s ; transition: all 0.15s ;}
 
-
 table, td {border:1px solid black;}
 
 /*   HEADER   */
