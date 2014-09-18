@@ -1,0 +1,7 @@
+-x New File Wizards (drewio and vdrewio)
+Compartment items for input and output
+better icons
+switch to visual
+switch to text
+i18n
+comments fields

@@ -31,15 +31,24 @@ function createAssignmentTable(rowData)
  	theSection.appendChild(theTable);
  	return theTable;
 }
-function populateTable(theTable, rowData)
+function populateTable(theTable, rowData,theHref)
 {
-	
- 	var row = theTable.insertRow();
+	var row = theTable.insertRow();
  	
  	for (var i = 0; i < rowData.length; i++) 
 	{
       	 var cell1 = row.insertCell(i);
-		 cell1.innerHTML = rowData[i];;
+      	 if(i==0 && theHref.length>0)
+		 {
+			var theNewHref= "<a href='" + theHref + "'</a>";  
+ 	
+		 	cell1.innerHTML = theNewHref +  rowData[i];
+		 }
+		 else
+		 {
+		 	cell1.innerHTML =rowData[i];
+		 
+		 }
 	 }
     
 }
@@ -50,25 +59,26 @@ function buildAssignments()
 	
 
 	var sapProj= ["SAP Hana ESP, SAP Sybase ESP Studio, all versions", "Java", "Eclipse, RCP, EMF, GEF, SWT, JFace, xText,junit, jdbc, ant, XML, XSD, Agile/Scrum,  DSL, Hana, complex event processing"];
-	populateTable(theTable, sapProj);
+	populateTable(theTable, sapProj, "http://www.sap.com/pc/tech/database/software/sybase-complex-event-processing/index.html");
 	
 	var aleriProj= ["Aleri Streaming Platform , all versions", "Java", "Eclipse, RCP, EMF, GEF, SWT, JFace, junit, jdbc, ant, ssh, XML, XSD, complex event processing"];
-	populateTable(theTable, aleriProj);
+	populateTable(theTable, aleriProj,"http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc01365.0320/html/title.htm");
 	
 	var ibmrsa= ["Rational Software Architect", "Java", "Eclipse, EMF, GEF, SWT, UML"];
-	populateTable(theTable, ibmrsa);
+	populateTable(theTable, ibmrsa, "http://www.ibm.com/developerworks/downloads/r/architect/");
 	
 	var ratlxde= ["Rational XDE and Visual Studio Modeler", "C++", "Visual Studio, STL, ATL, GDI, DDS (Davinci drawing surface) COM, VS.NET SDK (VSIP), UML 1.x"];
-	populateTable(theTable, ratlxde);
+	populateTable(theTable, ratlxde,"http://www-03.ibm.com/software/products/en/rosedevvis");
 	
 	var codepatt= ["CodePattern", "C++", "Visual Studio, STL, ATL, MFC,lexx,yacc,VisualParse"];
-	populateTable(theTable, codepatt);
+	populateTable(theTable, codepatt,"");
 	
 	var Freshlook= ["Freshlook", "C++", "Visual Studio, DirectX, STL, ATL, MFC,lexx,yacc,VisualParse"];
-	populateTable(theTable, Freshlook);
+	populateTable(theTable, Freshlook, "http://home.comcast.net/~drewqb/portfolioweb/freshlook.zip");
 	
+ 			
 	var rose4= ["Rational Rose 2.7-4.0", "C++", "Visual Studio, STL, ATL, MFC, GDI, COM, OLE automation, Java, CORBA IDL, Oracle8, VisualParse, UML, Booch, OMT"];
-	populateTable(theTable, rose4);
+	populateTable(theTable, rose4, "http://www-03.ibm.com/software/products/en/ratirosefami");
 	
 }
 </script>

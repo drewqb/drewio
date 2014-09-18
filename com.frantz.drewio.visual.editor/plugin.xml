@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypes">
+      <diagramType
+            name="DrewIO Visual Editor Diagram Type"
+            type="drewio"
+            id="com.frantz.drewio.visual.editor.drewioeditorDiagramType">
+      </diagramType>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.diagramTypeProviders">
+      <diagramTypeProvider
+            name="Editor Diagram Type Provider"
+            class="com.frantz.drewio.visual.editor.diagram.EditorDiagramTypeProvider"
+            id="com.frantz.drewio.visual.editor.diagram.EditorDiagramTypeProvider">
+         <diagramType
+               id="com.frantz.drewio.visual.editor.drewioeditorDiagramType">
+         </diagramType>
+         <imageProvider
+               id="com.frantz.drewio.visual.editor.ImageProvider">
+         </imageProvider>
+      </diagramTypeProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.viewer">
+      <viewerContentBinding
+            viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension
+                  isRoot="false"
+                  pattern="com.frantz.drewio.visual.editor.navigatorContent">
+            </contentExtension>
+         </includes>
+      </viewerContentBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.navigator.navigatorContent">
+      <navigatorContent
+            activeByDefault="true"
+            contentProvider="com.frantz.drewio.visual.editor.navigator.ContentProvider"
+            id="com.frantz.drewio.visual.editor.navigatorContent"
+            labelProvider="com.frantz.drewio.visual.editor.navigator.StudioLabelProvider"
+            name="Navigator Content">
+         <triggerPoints>
+            <or>
+               <instanceof
+                     value="org.eclipse.core.resources.IFile">
+               </instanceof>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+               <instanceof
+                     value="com.frantz.drewio.drewIO.Statement">
+               </instanceof>
+               <instanceof
+                     value="org.eclipse.core.resources.IFile">
+               </instanceof>
+            </or>
+         </possibleChildren>
+         <actionProvider
+               class="org.eclipse.ui.internal.navigator.resources.actions.OpenActionProvider">
+         </actionProvider>
+      </navigatorContent>
+   </extension>
+   <extension
+         point="org.eclipse.graphiti.ui.imageProviders">
+      <imageProvider
+            class="com.frantz.drewio.visual.editor.ImageProvider"
+            id="com.frantz.drewio.visual.editor.ImageProvider">
+      </imageProvider>
+   </extension>
+
+
+<extension
+	    point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+	    <propertyContributor
+           contributorId="com.frantz.drewio.visual.editor.PropertyContributor"
+           labelProvider="com.frantz.drewio.visual.editor.property.PropertyLabelProvider"
+           typeMapper="com.frantz.drewio.visual.editor.property.TypeMapper">
+	        <propertyCategory category="Graphiti">
+	        </propertyCategory>
+	    </propertyContributor>
+	</extension>
+	 
+	<extension
+	    point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+	    <propertyTabs contributorId="com.frantz.drewio.visual.editor.PropertyContributor">
+	        <propertyTab label="Main" category="Graphiti" 
+	            id="graphiti.main.tab">
+	        </propertyTab>
+	        
+	        <!--
+	        Defines a property sheet tab for the Eclipse tabbed property sheet for EReferences.
+	        -->
+			<propertyTab
+				category="Graphiti"
+				id="graphiti.columns.tab"
+				label="Columns">
+			</propertyTab>
+   <propertyTab
+         category="Graphiti"
+         id="graphiti.inputstream.tab"
+         label="General">
+   </propertyTab>
+	    </propertyTabs>
+	</extension>
+	 
+	<extension
+	    point="org.eclipse.ui.views.properties.tabbed.propertySections">
+	    <propertySections contributorId="com.frantz.drewio.visual.editor.PropertyContributor">
+	      
+         <propertySection
+               class="com.frantz.drewio.visual.editor.property.InputStatementSection"
+               enablesFor="1"
+               id="graphiti.inputstream.tab.emfclass"
+               tab="graphiti.inputstream.tab">
+            <input
+                  type="com.frantz.drewio.drewIO.InputStatement">
+            </input>
+         </propertySection>
+	        
+	        <!--
+	        Defines a standard (table format) property sheet section using the table property sheet
+	        integration into the Eclipse tabbed property sheet for EReferences.
+	        
+			<propertySection
+				class="org.eclipse.ui.views.properties.tabbed.AdvancedPropertySection"
+				filter="org.eclipse.graphiti.examples.tutorial.property.TutorialEReferenceFilter"
+				id="graphiti.main.tab.emfreference.table"
+				tab="graphiti.table.tab">
+			</propertySection>
+			-->
+	    </propertySections>
+	</extension>
+ 
+<!--
+	Registers an Eclipse adapter factory to provide IPropertySource objects for the GraphitiConnectionEditPart
+	that gets selected in the DiagramEditor to provide a standard (table format) property sheet for EReference
+	objects.
+	-->
+	<extension
+       point="org.eclipse.core.runtime.adapters">
+		<factory
+			adaptableType="org.eclipse.graphiti.ui.platform.GraphitiShapeEditPart"
+			class="com.frantz.drewio.visual.editor.property.PropertySourceFactory">
+			<adapter
+				type="org.eclipse.ui.views.properties.IPropertySource">
+			</adapter>
+		</factory>
+	</extension>
+ <extension
+       point="org.eclipse.ui.editors">
+    <editor
+          default="false"
+          id="com.frantz.drewio.visual.editor.editor1"
+          name="name">
+    </editor>
+    <editor
+          class="com.frantz.drewio.visual.editor.VisualDrewIOEditor"
+          contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+          extensions="vdrewio"
+          icon="icons/sample.gif"
+          id="com.frantz.drewio.visual.editor.VisualDrewIOEditor"
+          name="DrewIO Visual Editor">
+    </editor>
+ </extension>
+ <extension
+       point="org.eclipse.ui.newWizards">
+    <category
+          id="com.frantz.drewio.visual.editor"
+          name="DrewIO Wizards">
+    </category>
+    <wizard
+          category="com.frantz.drewio.visual.editor"
+          class="com.frantz.drewio.visual.editor.wizards.DrewIONewWizard"
+          icon="icons/sample.gif"
+          id="com.frantz.drewio.visual.editor.wizards.DrewIONewWizard"
+          name="DrewIO files">
+    </wizard>
+ </extension>
+
+
+</plugin>

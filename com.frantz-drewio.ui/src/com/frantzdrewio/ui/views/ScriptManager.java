@@ -35,7 +35,7 @@ public class ScriptManager
     	try
     	{
     		// setup the script environment by passing in 
-    		// the SWT Shell and Display, the current ccl model 
+    		// the SWT Shell and Display, the current model 
     		// that is loaded in the canvas and the output console.
     		engine.put("shell", myCanvas.getShell());
     		engine.put("display", myCanvas.getShell().getDisplay());
