@@ -1,0 +1,64 @@
+grammar com.frantz.txtuml.TxtUML with org.eclipse.xtext.common.Terminals
+
+generate txtUML "http://www.frantz.com/txtuml/TxtUML"
+
+Model:
+	statements+=Statement*;
+	
+Statement:
+		(ClassDecl | SequenceDecl)
+;	
+
+ClassDecl:
+	'class' name=ID ('inherits' inherits+=[ClassDecl] ( ',' inherits+=[ClassDecl] )*)?
+	'{' 
+		sections+=ClassSectionDecl (sections+=ClassSectionDecl )*
+	'}' 
+;
+ClassMember:
+	MethodDecl | AttributeDecl | AssociationDecl ;
+
+ClassSectionDecl:
+	(visibility=VisibilityDecl)? members+=ClassMember (',' members+=ClassMember )* ';';
+
+VisibilityDecl:
+	visibility=Visibility ':';
+	
+MethodDecl: 
+	returnType=DataType name=ID '(' ')' ;	
+	
+AttributeDecl:    
+	type=DataType name=ID ;
+	
+AssociationDecl:    
+	type=[ClassDecl] name=ID;
+	
+SequenceDecl:
+	'sequence' name=ID
+	'{'
+		(sections+=SequenceSectionDecl (sections+=SequenceSectionDecl)*)?
+	'}'
+;
+SequenceSectionDecl:
+		ActorSectionDecl | MessageSectionDecl;
+	
+ActorSectionDecl:
+	'actors' ':' actors+=ActorDecl (',' actors+=ActorDecl )* ';';	
+MessageSectionDecl:
+	'messages' ':' messages+=MessageDecl (',' actors+=MessageDecl )* ';';
+		
+	
+ActorDecl:
+	name=ID (classRef=[ClassDecl])?  ;
+
+MessageDecl:
+	name=ID leftOp=[ActorDecl]  operator=MessageOperator righOp=[ActorDecl] (':' method=[MethodDecl])? ; 
+
+enum MessageOperator:
+	RIGHT_MSG='-->' | LEFT_MSG='<--';
+	
+enum DataType :
+	BOOLEAN='boolean' | STRING='string' | INTEGER='integer' | DOUBLE='double';
+
+enum Visibility:
+	PUBLIC='public' | PRIVATE='private';

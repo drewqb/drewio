@@ -1,0 +1,58 @@
+class Foo 
+{
+	private:
+		integer aa,
+		integer bb,
+		integer foo(),
+		integer bar();
+}
+
+class Mem 
+{
+	
+	public:
+		integer foo(),
+		integer bar();
+	
+	private:
+		boolean	aaa;
+}
+class Bar inherits Foo
+{
+	private:
+		boolean cc,
+		integer dd,
+		Mem myMem;
+
+	public:
+		integer foo1(),
+		boolean bar2();
+	
+}
+
+
+sequence s1
+{
+
+	actors:
+		Actor1 Foo,
+		Actor2 Bar,
+		Actor3 Mem;
+
+	messages:
+		m1 Actor1 --> Actor2 ,
+		m2 Actor1 <-- Actor2 ,
+		m3 Actor1 --> Actor3;
+
+	actors:
+		Actor7 Foo,
+		Actor8 Bar,
+		Actor9 Mem;
+	
+	messages:
+		m7 Actor7 --> Actor8 ,
+		m8 Actor7 <-- Actor8 ,
+		m9 Actor7 --> Actor9;
+			
+}
+

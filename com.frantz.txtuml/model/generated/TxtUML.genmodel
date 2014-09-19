@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.frantz.txtuml/src-gen" editDirectory="/com.frantz.txtuml.edit/src"
+    editorDirectory="/com.frantz.txtuml.editor/src" modelPluginID="com.frantz.txtuml"
+    forceOverwrite="true" modelName="TxtUML" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="com.frantz.txtuml.edit"
+    editorPluginID="com.frantz.txtuml.editor" runtimeVersion="2.10">
+  <genPackages prefix="TxtUML" basePackage="com.frantz.txtuml" disposableProviderFactory="true"
+      fileExtensions="txtuml" ecorePackage="TxtUML.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TxtUML.ecore#//MessageOperator">
+      <genEnumLiterals ecoreEnumLiteral="TxtUML.ecore#//MessageOperator/RIGHT_MSG"/>
+      <genEnumLiterals ecoreEnumLiteral="TxtUML.ecore#//MessageOperator/LEFT_MSG"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TxtUML.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="TxtUML.ecore#//DataType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="TxtUML.ecore#//DataType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="TxtUML.ecore#//DataType/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="TxtUML.ecore#//DataType/DOUBLE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TxtUML.ecore#//Visibility">
+      <genEnumLiterals ecoreEnumLiteral="TxtUML.ecore#//Visibility/PUBLIC"/>
+      <genEnumLiterals ecoreEnumLiteral="TxtUML.ecore#//Visibility/PRIVATE"/>
+    </genEnums>
+    <genClasses ecoreClass="TxtUML.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TxtUML.ecore#//Model/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//Statement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TxtUML.ecore#//Statement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//ClassDecl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TxtUML.ecore#//ClassDecl/inherits"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TxtUML.ecore#//ClassDecl/sections"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//ClassMember">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TxtUML.ecore#//ClassMember/name"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//ClassSectionDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TxtUML.ecore#//ClassSectionDecl/visibility"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TxtUML.ecore#//ClassSectionDecl/members"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//VisibilityDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TxtUML.ecore#//VisibilityDecl/visibility"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//MethodDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TxtUML.ecore#//MethodDecl/returnType"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//AttributeDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TxtUML.ecore#//AttributeDecl/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//AssociationDecl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TxtUML.ecore#//AssociationDecl/type"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//SequenceDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TxtUML.ecore#//SequenceDecl/sections"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//SequenceSectionDecl"/>
+    <genClasses ecoreClass="TxtUML.ecore#//ActorSectionDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TxtUML.ecore#//ActorSectionDecl/actors"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//MessageSectionDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TxtUML.ecore#//MessageSectionDecl/messages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TxtUML.ecore#//MessageSectionDecl/actors"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//ActorDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TxtUML.ecore#//ActorDecl/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TxtUML.ecore#//ActorDecl/classRef"/>
+    </genClasses>
+    <genClasses ecoreClass="TxtUML.ecore#//MessageDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TxtUML.ecore#//MessageDecl/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TxtUML.ecore#//MessageDecl/leftOp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TxtUML.ecore#//MessageDecl/operator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TxtUML.ecore#//MessageDecl/righOp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TxtUML.ecore#//MessageDecl/method"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

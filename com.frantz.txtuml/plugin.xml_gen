@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.frantz.com/txtuml/TxtUML" 
+       class = "com.frantz.txtuml.txtUML.TxtUMLPackage"
+       genModel = "model/generated/TxtUML.genmodel" /> 
+	
+  </extension>
+
+
+
+</plugin>

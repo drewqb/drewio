@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="txtUML" nsURI="http://www.frantz.com/txtuml/TxtUML" nsPrefix="txtUML">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+        eType="#//Statement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassDecl" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inherits" unique="false"
+        upperBound="-1" eType="#//ClassDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+        eType="#//ClassSectionDecl" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassMember">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassSectionDecl">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visibility" eType="#//VisibilityDecl"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
+        eType="#//ClassMember" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VisibilityDecl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//Visibility"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MethodDecl" eSuperTypes="#//ClassMember">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeDecl" eSuperTypes="#//ClassMember">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssociationDecl" eSuperTypes="#//ClassMember">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ClassDecl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceDecl" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+        eType="#//SequenceSectionDecl" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceSectionDecl"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActorSectionDecl" eSuperTypes="#//SequenceSectionDecl">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" upperBound="-1"
+        eType="#//ActorDecl" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageSectionDecl" eSuperTypes="#//SequenceSectionDecl">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
+        eType="#//MessageDecl" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" upperBound="-1"
+        eType="#//MessageDecl" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActorDecl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classRef" eType="#//ClassDecl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageDecl">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftOp" eType="#//ActorDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//MessageOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="righOp" eType="#//ActorDecl"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="method" eType="#//MethodDecl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageOperator">
+    <eLiterals name="RIGHT_MSG" literal="-->"/>
+    <eLiterals name="LEFT_MSG" value="1" literal="&lt;--"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
+    <eLiterals name="BOOLEAN" literal="boolean"/>
+    <eLiterals name="STRING" value="1" literal="string"/>
+    <eLiterals name="INTEGER" value="2" literal="integer"/>
+    <eLiterals name="DOUBLE" value="3" literal="double"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Visibility">
+    <eLiterals name="PUBLIC" literal="public"/>
+    <eLiterals name="PRIVATE" value="1" literal="private"/>
+  </eClassifiers>
+</ecore:EPackage>
