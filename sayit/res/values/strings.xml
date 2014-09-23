@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Say">Say</string>
+    <string name="Next">Next</string>
+    <string name="Previous">Previous</string>
+    <string name="hello">Hello World, SayIt!</string>
+    <string name="app_name">SayIt</string>
+</resources>
