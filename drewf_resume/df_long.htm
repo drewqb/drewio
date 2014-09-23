@@ -1,0 +1,311 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Resume of Software Engineering Professional, Development Lead, Software Architect Drew Frantz 08057">
+  <meta name="author" content="Drew Frantz - drew@acm.org">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="Software Engineering Professional, Development Lead, Software Engineer, Software Architect, 08057, Java, C++, Complex Event Processing, 
+  	Eclipse plugin, EMF, GEF, xText, SWT, RCP, 
+  	XML, UML, html5, JavaScript, Agile, Scrum Master, Lex, Yacc, Visual Parse++">
+  
+  <link rel="stylesheet" type="text/css" href="df_style.css">
+    <title>Drew Frantz</title>
+    
+	
+<script>
+function populateOptions(theList, options)
+{
+    var select = document.getElementById(theList);
+    if(select==null) return;
+    
+    for (var i = 0; i < options.length; i++) {
+        var opt = options[i];
+        var el = document.createElement("dd");
+        el.textContent = opt;
+        el.value = opt;
+        el.title=opt;
+       	select.appendChild(el);
+     }
+}
+function populateOptionsWithTitle(theList, options,theTitle)
+{
+    var select = document.getElementById(theList);
+ 	if(select==null) return;
+ 	
+	var dt = document.createElement("dt");
+  	dt.textContent = theTitle;
+    dt.value = theTitle;
+    dt.title=theTitle;
+    select.appendChild(dt);
+    
+    populateOptions(theList, options);
+
+   
+}
+function buildOptions(options)
+{
+	var optionsAsString="";
+	for (var i = 0; i < options.length; i++) 
+	{
+      	 optionsAsString = optionsAsString + options[i];
+      	 if(i<options.length-1)
+		{
+      		 optionsAsString = optionsAsString + ", ";
+			}
+     	 
+	 }
+	return optionsAsString;
+}
+function createMyTable()
+{
+	var skills = document.getElementById("skills");
+ 	if(skills==null) return;
+ 	
+   	var theTable = document.createElement("TABLE");
+ 	theTable.setAttribute("id", "SkillsTable");
+ 	skills.appendChild(theTable);
+ 	return theTable;
+}
+function populateTableWithTitle(theTable, options,theTitle)
+{
+	
+ 	var optionsAsString=buildOptions(options);
+ 	
+    var row = theTable.insertRow();
+ 	var cell1 = row.insertCell(0);
+ 	var cell2 = row.insertCell(1);
+ 	
+    cell1.innerHTML = theTitle;
+ 	cell2.innerHTML = optionsAsString;
+}
+function populateList()
+{
+	var theTable = createMyTable();
+	var lang = ["Java", "C++"];
+	
+	populateTableWithTitle( theTable, lang, "Languages");
+	
+	var plat = ["Windows", "Linux"];
+	populateTableWithTitle(theTable, plat, "Platforms");
+	
+	var sengr = ["Agile", "Scrum Master", "Project Management", "Estimating", "Scoping", "Test Driven Development (TDD)",
+	             "Dependency Injection"];
+	populateTableWithTitle(theTable, sengr, "Software Engineering");
+	
+	var db = ["Hana", "Oracle", "DB2", "SQL", "Database Design", "JDBC"];
+	populateTableWithTitle(theTable, db, "Database");
+	
+	var eclipse = ["Eclipse", "GEF", "EMF", "xText", "RCP", "SWT", "jFace", "XML", "XSD", "guice"];
+	populateTableWithTitle(theTable, eclipse, "Tools Eclipse");
+
+	var other = ["Cygwin", "UML", "html5", "javascript", "perforce", "git", "svn", "cvs", "Jira", "ClearCase", "Yacc/Lexx"];
+	populateTableWithTitle(theTable, other, "Tools Other");
+
+	
+
+	var special = ["MVC", "UI development", "Usability", "UX", "Eclipse Plugin Development", "Graphical Modeling Tools", "Custom IDE's", 
+	               "DSL Design", "DSL editors", "Commercial Product Development", "Complex Event Processing",
+	               "Scripting Integration", "Iterative Development", "parsers"];
+	   
+	populateTableWithTitle(theTable, special, "Specialized Skills");
+	
+	var misc = ["software engineering", "technology", "music", "coach youth football/basketball", "fishing",
+                "guitar", "philly sports"];
+	populateOptions("Interests", misc);
+
+}
+function populateListOld()
+{
+   
+	var lang = ["Java", "C++"];
+	populateOptionsWithTitle("Skills", lang, "Languages");
+	
+	var plat = ["Windows", "Linux"];
+	populateOptionsWithTitle("Skills", plat, "Platforms");
+	
+	var sengr = ["Agile", "Scrum Master", "Project Management", "Estimating", "Scoping", "Test Driven Development (TDD)",
+	             "Dependency Injection"];
+	populateOptionsWithTitle("Skills", sengr, "Software Engineering");
+	
+	var db = ["Hana", "Oracle", "DB2", "SQL", "Database Design", "JDBC"];
+	populateOptionsWithTitle("Skills", db, "Database");
+	
+	var eclipse = ["Eclipse", "GEF", "EMF", "xText", "RCP", "SWT", "jFace", "XML", "XSD", "guice"];
+	populateOptionsWithTitle("Skills", eclipse, "Tools Eclipse");
+
+	var other = ["Cygwin", "UML", "html5", "javascript", "perforce", "git", "svn", "cvs", "Jira", "ClearCase", "Yacc/Lexx"];
+	populateOptionsWithTitle("Skills", other, "Tools Other");
+
+	
+
+	var special = ["MVC", "UI development", "Usability", "UX", "Eclipse Plugin Development", "Graphical Modeling Tools", "Custom IDE's", 
+	               "DSL Design", "DSL editors", "Commercial Product Development", "Complex Event Processing",
+	               "Scripting Integration", "Iterative Development", "parsers"];
+	   
+	populateOptionsWithTitle("Skills", special, "Specialized Skills");
+	
+	var misc = ["software engineering", "technology", "music", "coach youth football/basketball", "fishing",
+                "guitar", "philly sports"];
+	populateOptions("Interests", misc);
+}
+</script>
+<script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51500091-1', 'comcast.net');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body onload="populateList()">
+	<header class="Drew">
+    	<h1 class="name" title="Drew Frantz, Software Engineering Professional, Development Lead, Software Engineer/Architect, 08057">Drew Frantz</h1>
+        <h2 class="role">Software Engineering Professional, Development Lead, Software Engineer/Architect</h2>
+    	<ul class="contact">
+        	<li ><a href="http://home.comcast.net/~drewqb/df_long.htm" title="Drew Frantz">Home</a></li>
+        	<li class="email"><a href="mailto:drew@acm.org" >drew@acm.org</a></li>
+            <li class="tel">609-504-4869</li>
+        	<li ><a href="https://www.linkedin.com/in/drewfrantz" title="Drew Frantz - LinkedIn">Drew Frantz - LinkedIn</a></li>
+            <li ><a href="http://home.comcast.net/~drewqb/portfolioweb/portfolio.htm" title="Drew Frantz -Portfolio">Portfolio</a></li>
+		</ul>
+    </header>
+
+	<section id="summary">
+    	<h1>Summary</h1>
+        <p>Software engineering professional recognized for a high tolerance for ambiguity and a proven track record of designing and building commercial software products. During my career I have been part of more than 20 product releases including a number of 1.0 releases (SAP ESP, Aleri CEP, Rational RSA/XDE/Rose). To every assignment I will bring a passion for software development, experience in product development and the grit and commitment required for completing the job.</p>
+        	
+    </section>
+    <section id="experience">
+    	<h1>Strengths</h1>
+    	<article >
+    		<ul>
+				<li>Codify sketchy requirements into functional software</li>
+				<li>Autonomous, hands-on development lead which also fosters an environment of team hustle</li>
+				<li>Lead and mentor engineers and work with local and virtual engineering teams</li>
+				<li>Effectively articulate and defend ideas that evolve into practical project plans</li>
+				<li>Embrace, absorb and become productive in new technologies</li>
+			</ul>
+		</article>
+         </section>
+	<section id="skills">
+    	<h1>Skills</h1>
+        <dl id="Skills">
+        </dl>
+    </section>
+    <section id="skills">
+    	<h1>Commercial Products</h1>
+        <dl>
+        <dt>SAP - Sybase - Aleri</dt>
+            <dd title="SAP Event Stream Processor Studio">SAP ESP Studio</dd>
+            <dd title="Hana SAP ESP">Hana SAP ESP</dd>
+            <dd title="Aleri Studio">Aleri Studio </dd>
+      
+        <dt>Rational Software - IBM</dt>
+            <dd title="Rational Software Architect Eclipse based UML Modeling Tool">Rational Software Architect</dd>
+            <dd title="Rational XDE UML Modeling Tool for Microsoft Visual Studio">Rational XDE</dd>
+            <dd title="Rational Rose for Java">Rational Rose/J</dd>
+            <dd title="Rational Rose for Oracle8">Rational Oracle8</dd>
+            <dd title="Rational Rose 2.5-4.0">Rational Rose 2.5-4.0 </dd>
+            <dd title="Rational Rose for Powerbuilder">Rational Rose for Powerbuilder</dd>
+            <dd title="Rational Rose for SQLWindows">Rational Rose for SQLWindows</dd>
+        </dl>
+    </section>
+    
+    
+<section id="experience">
+    	<h1>Work Experience</h1>
+        <article>
+        	<h2>Development Architect - SAP</h2>
+            <time datetime="02/01/2010" class="start">February 2010</time>
+            <span class="end">Present</span>
+            <p>
+            	Lead development activities (design, scoping, scheduling, and implementation) for all current shipping releases of SAP ESP Studio and Hana ESP Studio plugins. Serve as development lead and development architect for standalone ESP Studio and Hana ESP plugins. Manage virtual ESP Studio team of 2-4 software engineers. Acting scrum master of ESP team and participate in other ESP scrums to resolve UI end to end dependencies. Represent ESP team as part of larger Hana Studio team, resolving issues of graphical tool harmonization and standard UI behavior.
+ 			</p>
+ 			<ul>
+				<li>Architected, designed and lead development of SAP ESP Studio 1.0-present releases as a standalone eclipse rich application and as a feature plugin to Hana Studio.</li>
+				<li>Designed and implemented graphical editor (eclipse GEF + EMF) and associated eclipse UI editing components including: tabbed property pages, actions, commands, preferences, wizards, menus, toolbars, graphical notation meta-model (eclipse EMF) for storing visual model.</li>
+				<li>Designed and implemented rich text editor for CCL language (xText) and the patented mechanism to switch between the textual and graphical representation of CCL (Text-to-Visual Switching and Mapping No. 13234616).</li>
+				<li>Designed and implemented UI infrastructure for compiling and running ESP models thru ESP cluster manager. </li>
+				<li>Improved productivity and quality as only architect from original Aleri team, defining ESP roadmap since original release by staying on board, assisting in building new Sybase ESP product, maintaining workflow, utilizing prior product knowledge, ensuring completion and bringing product to market in timely manner.</li>
+				<li>Collaborated with engineering team and product management team on usability improvements and deliver continuous usability improvements as part of engineering release cycle.</li>
+				<li>Enhance product development by coordinating studio-tooling effort, facilitating cross-global teams, including ESP team members in Dublin, CA, Waterloo Canada, Beijing China, and Waldorf Germany.</li>
+			</ul>
+             
+ 			        
+        </article>
+        <article>
+        	<h2>IDE/GUI Lead Software Architect - Aleri</h2>
+            <time datetime="08/15/2005" class="start">August 2005</time>
+            <time datetime="01/20/2010" class="end">January 2010</time>
+            <p>Led ground-up development of IDE for Aleri complex event processing platform called Aleri Studio. Served as IDE architect and development lead on all release of Aleri Studio product until company was acquired by Sybase in 2010(Sybase acquired by SAP 1 month later). 
+ 			</p>
+			<ul>
+			<li>Architected, designed and lead development of Aleri Studio 1.0-last release as standalone eclipse rich application.</li>
+			<li>Designed and implemented graphical editor (eclipse GEF + EMF) and associated eclipse UI editing components including: property pages, actions, commands, preferences, wizards, menus, toolbars, graphical notation meta-model (eclipse EMF) for storing visual model.</li>
+			<li>Designed and implemented a number of IDE components for running and testing event streaming models including: table based stream-viewer, data flow based graphical performance monitor and event tracer, model debugger and watch window, manual data input and file based playback tools.</li>
+			<li>Collaborated with architecture team, product manager and CTO to define product roadmap for the Aleri Streaming Platform.</li>
+			<li>Collaborated with engineering team and product management team on Studio usability improvements and deliver continuous usability improvements as part of engineering release cycle.</li>
+			<li>Performed the planning, scoping, requirements, design, documentation and testing of Aleri Studio product.</li>
+			</ul> 			
+        </article>
+		<article>
+        	<h2>Senior Software Engineering Consultant - IBM</h2>
+            <time datetime="10/01/2004" class="start">October 2004</time>
+            <time datetime="08/15/2005" class="end">August 2005</time>
+            <p>As a member of the ISSR I have engaged with various clients in the NJ, NY, PA area (Lockheed, Telcordia, Verizon Wireless, MCI, Navy, PJM, Och-Ziff, Vanguard, UPS, etc.) as a senior software engineering consultant. As a senior consultant I have performed the following duties at various clients:
+ 			</p>
+			<ul>
+			<li>Design/Construction of eclipse plugins</li>
+			<li>OOAD mentoring assignment at Lockheed Martin on Aegis Open Architecture project</li>
+			<li>Mentoring/consulting on software engineering best practices and the Rational Software Development platform, with a focus on Rational Software Architect (RSA), Eclipse (WebSphere) plug-in development, XDE, Rose and UML</li>
+			<li>Executive product briefings and demonstrations</li>
+			
+			</ul> 			
+        </article>
+        <article>
+        	<h2>Senior Staff Software Engineer - Rational Software Corporation/IBM</h2>
+        	<p>(February of 2003 IBM Acquires Rational)</p>
+            <p>Led ground-up UI development of a number of different products including Rational XDE 1.0, VSM 1.0, Rational ,  Rose/J, Rose/CORBA and Rose/Oracle8 , Rose/PowerBuilder and RoseSQLWindows in addition I also designed and delivered a number of new features to the Rational Software Architect and Rational Rose products.
+ 			</p>
+			<ul>
+			<li>Designed and implemented UML Communication Diagram feature and action bar floating context toolbar for Rational Software Architect 1.0.</li> 
+			<li>Development lead on Rational XDE 1.0 and Visual Studio Modeler 1.0 teams (10+ engineers).</li> 
+			<li>Designed and implemented numerous features in the UI for Rational XDE And Visual Studio Modeler including: drawing surface shapes/connectors, active-x control wrapping, UI extensibility, UI error handling, interface with the rational model server and UML meta-model, UML sequence diagram component , selection container, model explorer, property browser, command handling and various other user interface related widgets. In addition I made significant design and coding contributions in many parts of the user interface and also spent a certain percentage of my time focusing on UI performance tuning.</li>
+			<li>Designed and implemented coding template meta-language and design pattern tool.</li> 
+			<li>Designed and implemented round-trip engineering framework used by Java, CORBA & XML Addins for Rose 4.0.</li> 
+			<li>Designed and implemented Rose/J, Rose/CORBA and Rose/Oracle8 reverse engineering components.</li> 
+			<li>Designed and implemented Rose AddIn architecture, OLE automation extensibility, model browser and drag and drop in Rose 4.0.Designed and implemented round-trip engineering components for Rose/PowerBuider (4.0, 3.0, 2.7) , RoseSQLWindows (2.7).</li>
+			
+			</ul> 	
+			
+        
+        </article>
+        
+
+    </section>
+     <section id="education">
+    	<h1>Education</h1>
+        <h2>Widener University</h2>
+        <p>Master of Engineering, Computer and Software Engineering</p>
+        <h2>Widener University</h2>
+        <p>BS, Electrical Engineering</p>
+        <h2>Nova Southeastern University</h2>
+        <p>Ph.D. Candidate Computer Science (ABD)</p>
+        <p>Unpublished dissertation proposal entitled "FreshLook: A reactive visualization tool for exploring UML object models". (C++, DirectX)</p>
+    </section>
+   
+   <section id="skills">
+    	<h1>Interests</h1>
+        <dl id="Interests">
+        </dl>
+    </section>
+    
+
+</body>
+</html>
