@@ -6,6 +6,7 @@ import org.eclipse.ui.IPerspectiveFactory;
 import org.eclipse.ui.console.IConsoleConstants;
 
 import com.frantzdrewio.ui.views.DrewIOView;
+import com.frantzdrewio.ui.views.SequenceView;
 
 
 public class DrewIOPerspective implements IPerspectiveFactory {
@@ -45,6 +46,7 @@ public class DrewIOPerspective implements IPerspectiveFactory {
        
         IFolderLayout outline = layout.createFolder("OUTLINE", IPageLayout.RIGHT, 0.8f, editorArea);
         outline.addView(DrewIOView.ID);
+        outline.addView(SequenceView.ID);
 		outline.addView(IPageLayout.ID_OUTLINE);
         outline.addPlaceholder("org.eclipse.help.ui.HelpView");
 	    

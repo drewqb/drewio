@@ -15,6 +15,13 @@
             class="com.frantzdrewio.ui.views.DrewIOView"
             id="com.frantzdrewio.ui.views.DrewIO View">
       </view>
+      <view
+            category="com.frantz-drewio.ui"
+            class="com.frantzdrewio.ui.views.SequenceView"
+            icon="icons/sample.gif"
+            id="com.frantzdrewio.ui.views.SequenceView"
+            name="SequenceView">
+      </view>
    </extension>
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
