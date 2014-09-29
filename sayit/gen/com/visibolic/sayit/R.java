@@ -49,48 +49,65 @@ public final class R {
         public static final int solid_yellow=0x7f050003;
     }
     public static final class drawable {
-        public static final int blue=0x7f020016;
-        public static final int green=0x7f020017;
-        public static final int icon=0x7f020000;
-        public static final int mouth_ai=0x7f020001;
-        public static final int mouth_cdgknrsyz=0x7f020002;
-        public static final int mouth_e=0x7f020003;
-        public static final int mouth_fv=0x7f020004;
-        public static final int mouth_l_th=0x7f020005;
-        public static final int mouth_mbp=0x7f020006;
-        public static final int mouth_o=0x7f020007;
-        public static final int mouth_rest=0x7f020008;
-        public static final int mouth_u=0x7f020009;
-        public static final int mouth_wq=0x7f02000a;
-        public static final int png_mouth_ai=0x7f02000b;
-        public static final int png_mouth_cdgknrsyz=0x7f02000c;
-        public static final int png_mouth_e=0x7f02000d;
-        public static final int png_mouth_fv=0x7f02000e;
-        public static final int png_mouth_i=0x7f02000f;
-        public static final int png_mouth_l=0x7f020010;
-        public static final int png_mouth_mbp=0x7f020011;
-        public static final int png_mouth_o=0x7f020012;
-        public static final int png_mouth_rest=0x7f020013;
-        public static final int png_mouth_uw=0x7f020014;
-        public static final int red=0x7f020015;
-        public static final int screen_background_black=0x7f020019;
-        public static final int translucent_background=0x7f02001a;
-        public static final int transparent_background=0x7f02001b;
-        public static final int yellow=0x7f020018;
+        public static final int blue=0x7f02001c;
+        public static final int chiefs=0x7f020000;
+        public static final int crimson_tide=0x7f020001;
+        public static final int eagles=0x7f020002;
+        public static final int green=0x7f02001d;
+        public static final int icon=0x7f020003;
+        public static final int mouth_ai=0x7f020004;
+        public static final int mouth_cdgknrsyz=0x7f020005;
+        public static final int mouth_e=0x7f020006;
+        public static final int mouth_fv=0x7f020007;
+        public static final int mouth_l_th=0x7f020008;
+        public static final int mouth_mbp=0x7f020009;
+        public static final int mouth_o=0x7f02000a;
+        public static final int mouth_rest=0x7f02000b;
+        public static final int mouth_u=0x7f02000c;
+        public static final int mouth_wq=0x7f02000d;
+        public static final int png_mouth_ai=0x7f02000e;
+        public static final int png_mouth_cdgknrsyz=0x7f02000f;
+        public static final int png_mouth_e=0x7f020010;
+        public static final int png_mouth_fv=0x7f020011;
+        public static final int png_mouth_i=0x7f020012;
+        public static final int png_mouth_l=0x7f020013;
+        public static final int png_mouth_mbp=0x7f020014;
+        public static final int png_mouth_o=0x7f020015;
+        public static final int png_mouth_rest=0x7f020016;
+        public static final int png_mouth_uw=0x7f020017;
+        public static final int profs=0x7f020018;
+        public static final int quakers=0x7f020019;
+        public static final int red=0x7f02001b;
+        public static final int screen_background_black=0x7f02001f;
+        public static final int translucent_background=0x7f020020;
+        public static final int transparent_background=0x7f020021;
+        public static final int widener=0x7f02001a;
+        public static final int yellow=0x7f02001e;
     }
     public static final class id {
-        public static final int Button01=0x7f070003;
-        public static final int EditText01=0x7f070002;
-        public static final int ImageView01=0x7f070000;
-        public static final int Spinner01=0x7f070001;
+        public static final int Button01=0x7f070009;
+        public static final int EditText01=0x7f070008;
+        public static final int ImageView01=0x7f070006;
+        public static final int Spinner01=0x7f070007;
+        public static final int displayintentextra=0x7f070000;
+        public static final int fragment_container=0x7f070002;
+        public static final int listview1=0x7f070005;
+        public static final int returnValue=0x7f070001;
+        public static final int thumbnail=0x7f070003;
+        public static final int title=0x7f070004;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
+        public static final int activity_result=0x7f030000;
+        public static final int fragcont=0x7f030001;
+        public static final int list_row=0x7f030002;
+        public static final int list_test=0x7f030003;
+        public static final int sayit=0x7f030004;
     }
     public static final class string {
         public static final int Next=0x7f060001;
         public static final int Previous=0x7f060002;
         public static final int Say=0x7f060000;
+        public static final int Testing=0x7f060005;
         public static final int app_name=0x7f060004;
         public static final int hello=0x7f060003;
     }

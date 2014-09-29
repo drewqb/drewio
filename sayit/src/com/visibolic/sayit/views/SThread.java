@@ -1,4 +1,6 @@
-package com.visibolic.sayit;
+package com.visibolic.sayit.views;
+
+import com.visibolic.sayit.extensibility.impl.Sprite;
 
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
@@ -6,10 +8,10 @@ import android.view.SurfaceHolder;
 public class SThread extends Thread{
 	 
 	public SurfaceHolder sfholder;
-	private SayItView panel;
+	private MovingPictureView panel;
 	boolean run = false;
  
-	public SThread (SurfaceHolder sfh, SayItView pnl){
+	public SThread (SurfaceHolder sfh, MovingPictureView pnl){
 		this.sfholder = sfh;
 		this.panel = pnl;
 	}
@@ -54,6 +56,7 @@ public class SThread extends Thread{
 					}
                                         // tell panel to draw everything
 					this.panel.onDraw(c);
+					//this.panel.draw(c);
 				}
 			}finally{
 				if (c != null){

@@ -1,4 +1,8 @@
-package com.visibolic.sayit;
+package com.visibolic.sayit.extensibility.impl;
+
+import com.visibolic.sayit.R;
+import com.visibolic.sayit.R.drawable;
+import com.visibolic.sayit.extensibility.IMouth;
 
 import android.content.res.Resources;
 import android.graphics.drawable.AnimationDrawable;

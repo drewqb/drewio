@@ -1,4 +1,4 @@
-package com.visibolic.sayit;
+package com.visibolic.sayit.views;
 
 import java.util.ArrayList;
 
@@ -8,33 +8,31 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.MotionEvent;
-import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-public class SayItView extends SurfaceView implements SurfaceHolder.Callback{
-	 
-	private SThread thread;
-	public ArrayList<Sprite> sprites;
+import com.visibolic.sayit.R;
+import com.visibolic.sayit.extensibility.impl.Sprite;
+
+public class RandomPictureView extends SurfaceView
+{
+	public ArrayList<Sprite> sprites=new ArrayList<Sprite>();;
 	long lastFPS;
 	int fps;
 	int frames;
- 
-	public SayItView (Context ctx){
+	public RandomPictureView (Context ctx){
 		super (ctx);
-		this.sprites = new ArrayList<Sprite>();
-		getHolder().addCallback(this);
-		this.thread = new SThread(getHolder(), this);
 		setFocusable(true); // The panel handles the screen touch, so be sure to give it the focus !
  
 		lastFPS = 0;
 		fps = 0;
 		frames = 0;
+		setWillNotDraw(false);
 	}
  
 	@Override
-	public void onDraw (Canvas canvas){
- 
-			canvas.drawColor(Color.BLACK);
+	public void onDraw (Canvas canvas)
+	{
+ 			canvas.drawColor(Color.BLACK);
 			for (Sprite s: sprites){
 				canvas.drawBitmap(s.bitmap, s.x, s.y, null);
 				frames++;
@@ -49,7 +47,7 @@ public class SayItView extends SurfaceView implements SurfaceHolder.Callback{
  
 			Paint ptext = new Paint();
 			ptext.setColor(Color.WHITE);
-			String fromattedFPS = fps + " fps";
+			String fromattedFPS = fps + " fps + Click on screen to draw an icon";
  
 			canvas.drawText(fromattedFPS, 0, fromattedFPS.length(), 10, 10, ptext);
 	}
@@ -57,33 +55,14 @@ public class SayItView extends SurfaceView implements SurfaceHolder.Callback{
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		if (event.getAction() == event.ACTION_UP){// when touching and releasing the finger
-			synchronized (thread.sfholder)
+			//synchronized (thread.sfholder)
 			{
 				sprites.add(new Sprite(BitmapFactory.decodeResource(getResources(), R.drawable.mouth_o), event.getX(), event.getY()));// drawable/smiley.gif is a smiley image
+				invalidate();
  			}
 		}
  
 		return true;
-	}
- 
-	public void surfaceCreated(SurfaceHolder arg0) {
-		this.thread.start();
-	}
- 
-	public void surfaceChanged(SurfaceHolder arg0, int arg1, int arg2, int arg3) {
-	}
- 
-	public void surfaceDestroyed(SurfaceHolder arg0) {
-		boolean retry = true;
-		this.thread.setRunning(false);
-		while (retry){
-			try{
-				this.thread.join();
-				retry = false;
-			}catch (InterruptedException ie){
- 
-			}
-		}
 	}
  
 }

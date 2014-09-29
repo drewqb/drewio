@@ -3,4 +3,8 @@
     <issue id="NewApi">
         <ignore path="src/com/visibolic/sayit/SayIt.java" />
     </issue>
+    <issue id="WrongCall">
+        <ignore path="src/com/visibolic/sayit/SThread.java" />
+        <ignore path="src/com/visibolic/sayit/activities/RandomPictureView.java" />
+    </issue>
 </lint>

@@ -1,4 +1,4 @@
-package com.visibolic.sayit;
+package com.visibolic.sayit.extensibility.impl;
 
 import android.graphics.Bitmap;
 

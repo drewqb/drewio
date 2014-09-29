@@ -1,4 +1,4 @@
-package com.visibolic.sayit;
+package com.visibolic.sayit.extensibility;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.text.Editable;
