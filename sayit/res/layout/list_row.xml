@@ -13,13 +13,19 @@
         android:layout_marginRight="8dp"
          />
  
-    <!-- Movie Title -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/thumbnail"
         android:layout_toRightOf="@+id/thumbnail"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/url_choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/thumbnail"
+        android:layout_below="@+id/thumbnail"
         android:textStyle="bold" />
  
 </RelativeLayout>

@@ -5,6 +5,8 @@ import java.util.List;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +32,8 @@ public class ImageListFragment extends Fragment
 			R.drawable.chiefs,
 			R.drawable.widener,
 			R.drawable.crimson_tide};
-
+	String[] urls =  { "http://www.philadelphiaeagles.com/", "http://www.rowanathletics.com/index.aspx?path=football", "http://mhs-athletics-homepage.mhs.mtps.schoolfusion.us/modules/groups/group_pages.phtml?gid=2354662&nid=232430&sessionid=1247b002e5c852c72658a64d9a5500e5&sessionid=1247b002e5c852c72658a64d9a5500e5",
+			"http://www.google.com", "http://www.widener.edu", "https://mybama.ua.edu/cp/home/displaylogin" };
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -50,10 +53,21 @@ public class ImageListFragment extends Fragment
 				ListItem li = (ListItem)parent.getItemAtPosition(position);
 				String msg=li.getText();
 				Toast.makeText(parent.getContext(), msg, Toast.LENGTH_SHORT).show();
+				launchBrowser(li);
 			}
 
 		});
 		return rootView;
+	}
+	void launchBrowser(ListItem li)
+	{
+		Uri uri = Uri.parse(li.getUrl());
+        startActivity(new Intent(Intent.ACTION_VIEW, uri));
+        //Intent i = new Intent(this.getActivity(), WebviewActivity.class);
+        //i.putExtra("url", li.getUrl());
+        //startActivity(i);
+		
+	    
 	}
 	void populateList(ListView listview)
 	{
@@ -61,7 +75,7 @@ public class ImageListFragment extends Fragment
 		ArrayList<ListItem> list = new ArrayList<ListItem>();
 		for (int i = 0; i < values.length; ++i) 
 		{
-			ListItem li = new ListItem( images[i], values[i]);
+			ListItem li = new ListItem( images[i], values[i], urls[i]);
 
 			list.add(li);
 		}
@@ -72,11 +86,12 @@ public class ImageListFragment extends Fragment
 	{
 		private int myImage;
 		private String myText;
-
-		public ListItem(int image, String txt)
+		private String myUrl;
+		public ListItem(int image, String txt, String url)
 		{
 			myImage=image;
 			myText=txt;
+			myUrl=url;
 		}
 		public int getImage()
 		{
@@ -86,6 +101,10 @@ public class ImageListFragment extends Fragment
 		public String getText()
 		{
 			return myText;
+		}
+		public String getUrl()
+		{
+			return myUrl;
 		}
 	}
 	class CustomAdapter extends BaseAdapter
@@ -125,6 +144,7 @@ public class ImageListFragment extends Fragment
 				convertView = l_Inflater.inflate(R.layout.list_row, null);
 				holder = new ViewHolder();
 				holder.txtText = (TextView) convertView.findViewById(R.id.title);
+				holder.txtUrl = (TextView) convertView.findViewById(R.id.url_choice);
 				holder.imageThumb = (ImageView) convertView.findViewById(R.id.thumbnail);
 				convertView.setTag(holder);
 			} 
@@ -133,6 +153,7 @@ public class ImageListFragment extends Fragment
 				holder = (ViewHolder) convertView.getTag();
 			}
 			holder.txtText.setText(myData.get(position).getText());
+			holder.txtUrl.setText(myData.get(position).getUrl());
 			holder.imageThumb.setImageResource(myData.get(position).getImage());
 			return convertView;
 
@@ -141,6 +162,7 @@ public class ImageListFragment extends Fragment
 	}
 	static class ViewHolder {
 		TextView txtText;
+		TextView txtUrl;
 		ImageView imageThumb;
 	}
 

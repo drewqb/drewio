@@ -35,7 +35,9 @@ public class AnimationView extends View
 			R.drawable.mouth_rest,
 			R.drawable.mouth_cdgknrsyz,
 			R.drawable.mouth_u,
-			R.drawable.mouth_o};
+			R.drawable.mouth_o,
+			R.drawable.chiefs
+			};
 	List <Sprite> mySprites = new ArrayList<Sprite>();
 	List <Sprite> mySpritesStopped = new ArrayList<Sprite>();
 	
@@ -44,9 +46,18 @@ public class AnimationView extends View
 	{
 		return myRunning;
 	}
+	public synchronized void setRunning(boolean run)
+	{
+		myRunning=run;
+		handleRunning();
+	}
 	public synchronized void toggleRunning()
 	{
 		myRunning=!myRunning;
+		handleRunning();
+	}
+	void handleRunning()
+	{
 		if(anim!=null)
 		{
 			if(myRunning)

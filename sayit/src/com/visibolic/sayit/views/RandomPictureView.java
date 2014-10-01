@@ -57,7 +57,7 @@ public class RandomPictureView extends SurfaceView
 		if (event.getAction() == event.ACTION_UP){// when touching and releasing the finger
 			//synchronized (thread.sfholder)
 			{
-				sprites.add(new Sprite(BitmapFactory.decodeResource(getResources(), R.drawable.mouth_o), event.getX(), event.getY()));// drawable/smiley.gif is a smiley image
+				sprites.add(new Sprite(BitmapFactory.decodeResource(getResources(), R.drawable.chiefs), event.getX(), event.getY()));// drawable/smiley.gif is a smiley image
 				invalidate();
  			}
 		}
