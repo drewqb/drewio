@@ -19,12 +19,14 @@ import com.visibolic.sayit.fragments.LauncherFragment;
 import com.visibolic.sayit.fragments.PictureViewFragment;
 import com.visibolic.sayit.fragments.ProximityFragment;
 import com.visibolic.sayit.fragments.SayitFragment;
+import com.visibolic.sayit.fragments.StockTableFragment;
 import com.visibolic.sayit.fragments.StringListFragment;
 
 public class SayIt extends Activity
 {
 	
 	Fragment fragments[] = {
+			
 			new SayitFragment(),
 			new ImageListFragment(),
 			new StringListFragment(),
@@ -32,10 +34,15 @@ public class SayIt extends Activity
 			new AnimationViewFragment(),
 			new ProximityFragment(),
 			new LauncherFragment(),
-			new ImageUrlFragment()
+			new ImageUrlFragment(),
+			new StockTableFragment(),
 			}; 
-	String fragmentTitles[] = {"Main", "Images", "Strings", "Picture", "Animation", "Proximity", 
-			"Launcher", "Portfolio"};		
+	String fragmentTitles[] = 
+			{
+			"Main", "Images", "Strings", "Picture", 
+			"Animation", "Proximity", "Launcher", "Portfolio", 
+			"Stocks"
+			};		
 			
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<TextView
+	    android:id="@+id/StockName"
+	    android:gravity="center"
+	    android:padding="3dip"
+	    />
+
+        <TextView
+            android:id="@+id/StockPrice"
+            android:gravity="center"
+            android:padding="3dip"
+             />
+
+        <TextView
+            android:id="@+id/StockChange"
+            android:gravity="center"
+            android:padding="3dip" />
+ </TableRow>
