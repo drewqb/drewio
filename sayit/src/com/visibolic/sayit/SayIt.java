@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import com.visibolic.sayit.activities.SettingsActivity;
 import com.visibolic.sayit.fragments.AnimationViewFragment;
 import com.visibolic.sayit.fragments.ImageListFragment;
+import com.visibolic.sayit.fragments.ImageUrlFragment;
+import com.visibolic.sayit.fragments.LauncherFragment;
 import com.visibolic.sayit.fragments.PictureViewFragment;
 import com.visibolic.sayit.fragments.ProximityFragment;
 import com.visibolic.sayit.fragments.SayitFragment;
@@ -29,8 +31,11 @@ public class SayIt extends Activity
 			new PictureViewFragment(),
 			new AnimationViewFragment(),
 			new ProximityFragment(),
+			new LauncherFragment(),
+			new ImageUrlFragment()
 			}; 
-	String fragmentTitles[] = {"Main", "Images", "Strings", "Picture", "Animation", "Proximity"};		
+	String fragmentTitles[] = {"Main", "Images", "Strings", "Picture", "Animation", "Proximity", 
+			"Launcher", "Portfolio"};		
 			
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

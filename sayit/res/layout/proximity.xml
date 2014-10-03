@@ -4,6 +4,48 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <GridLayout 
+        android:id="@+id/GridLayout1"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:columnCount="2"
+    	android:orientation="horizontal"
+        >
+		<TextView
+            android:id="@+id/LatitudeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latitude: ">
+        </TextView>
+		<TextView
+            android:id="@+id/LongitudeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Longitude: ">
+        </TextView>
+		<EditText 
+	    	android:id="@+id/LatitudeValue" 
+	    	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content">
+		</EditText>
+		<EditText 
+	    	android:id="@+id/LongitudeValue" 
+	    	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content">
+		</EditText>
+        <Button 
+            android:id="@+id/SetLocationButton" 
+	    	android:text="Set Location" 
+	    	android:layout_height="wrap_content" 
+	    	android:layout_width="fill_parent">
+		</Button>
+		<Button 
+            android:id="@+id/SetCurrentButton" 
+	    	android:text="Use Current Location" 
+	    	android:layout_height="wrap_content" 
+	    	android:layout_width="fill_parent">
+		</Button>
+    </GridLayout>
     <LinearLayout
         android:id="@+id/linearLayout0"
         android:layout_width="match_parent"

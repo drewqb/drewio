@@ -19,8 +19,6 @@ public class StringListFragment extends Fragment
 {
 	String[] values =  { "Eagles", "Profs", "Quakers",
 			"Chiefs", "Pride", "Crimson Tide" };
-	
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -47,7 +45,8 @@ public class StringListFragment extends Fragment
 	void populateList(ListView listview)
 	{
 		ArrayList<String> list = new ArrayList<String>();
-		for (int i = 0; i < values.length; ++i) {
+		for (int i = 0; i < values.length; ++i) 
+		{
 			list.add(values[i]);
 		}
 		ArrayAdapter<String> adapter = new ArrayAdapter<String> (listview.getContext(), android.R.layout.simple_list_item_1, list);

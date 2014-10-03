@@ -10,8 +10,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.visibolic.sayit.R;
 
@@ -20,8 +22,13 @@ public class ProximityFragment extends Fragment implements LocationListener
 	private TextView mCurrentLocationField;
 	private TextView mHomeField;
 	private TextView mDistanceField;
-	double mHomeLat = 39.9826280;
-	double mHomeLong = -74.9164930;
+	private EditText mLatitude;
+	private EditText mLongitude;
+	private Button mSetLocation;
+	private Button mCurrentLocation;
+	
+	private static final double mHomeLat = 39.9826280;
+	private static final double mHomeLong = -74.9164930;
 	private LocationManager mLocManager;
 	private String mStrProvider	= "Sayit Proximity Provider";
 
@@ -33,10 +40,58 @@ public class ProximityFragment extends Fragment implements LocationListener
 		mHomeField = (TextView) rootView.findViewById(R.id.HomeLocationValue);
 		mDistanceField = (TextView) rootView.findViewById(R.id.DistanceValue);
 		mLocManager = (LocationManager) rootView.getContext().getSystemService(Context.LOCATION_SERVICE);
-
+		mLatitude = (EditText) rootView.findViewById(R.id.LatitudeValue);
+		mLongitude = (EditText) rootView.findViewById(R.id.LongitudeValue);
+		mSetLocation = (Button) rootView.findViewById(R.id.SetLocationButton);
+		mCurrentLocation = (Button) rootView.findViewById(R.id.SetCurrentButton);
+		
 		// use default criteria
 		Criteria criteria = new Criteria();
 		mStrProvider = mLocManager.getBestProvider(criteria, false);
+		
+		mSetLocation.setOnClickListener(new OnClickListener()
+		{
+
+			@Override
+			public void onClick(View v) 
+			{
+				try
+				{
+					double dLat = Double.valueOf(mLatitude.getEditableText().toString());
+					Double dLong = Double.valueOf(mLongitude.getEditableText().toString());
+					setHomeLocation(dLat, dLong);
+				}
+				catch(Exception e)
+				{
+					
+				}
+			}
+			
+		});
+		mCurrentLocation.setOnClickListener(new OnClickListener()
+		{
+
+			@Override
+			public void onClick(View v) 
+			{
+				useCurrentLocationAsHome();
+			}
+			
+		});
+		setHomeLocation(mHomeLat, mHomeLong);
+		
+		return rootView;
+	}
+	void useCurrentLocationAsHome()
+	{
+		Location location = mLocManager.getLastKnownLocation(mStrProvider);
+		if (location != null) 
+		{
+			setHomeLocation(location.getLatitude(), location.getLongitude());
+		}
+	}
+	void updateCurrentPosition()
+	{
 		Location location = mLocManager.getLastKnownLocation(mStrProvider);
 		// Initialize the location fields
 		if (location != null) 
@@ -47,9 +102,17 @@ public class ProximityFragment extends Fragment implements LocationListener
 		{
 			mCurrentLocationField.setText("Location not set");
 		}
-		mHomeField.setText(getLocationValue(mHomeLat, mHomeLong));
 		
-		return rootView;
+	}
+	void setHomeLocation(double dLat, double dLong)
+	{
+		mLatitude.setText(String.valueOf(dLat));
+		mLongitude.setText(String.valueOf(dLong));
+		
+		mHomeField.setText(getLocationValue(dLat, dLong));
+		
+		updateCurrentPosition();
+
 	}
 	private String getLocationValue(double lat, double longi)
 	{
@@ -72,15 +135,25 @@ public class ProximityFragment extends Fragment implements LocationListener
 		super.onPause();
 		mLocManager.removeUpdates(this);
 	}
-
+	double getDouble(EditText e)
+	{
+		try 
+		{
+			return Double.valueOf(e.getText().toString());	
+		} 
+		catch (Exception e2) {
+		}
+		return 0;
+	}
 	@Override
 	public void onLocationChanged(Location location) {
 		double lat =  location.getLatitude();
 		double lng =  location.getLongitude();
 		mCurrentLocationField.setText(String.valueOf(getLocationValue(lat,lng)));
+		
 		Location homeLoc = new Location("Home Location");  
-		homeLoc.setLatitude(mHomeLat);
-		homeLoc.setLongitude(mHomeLong);
+		homeLoc.setLatitude(getDouble(this.mLatitude));
+		homeLoc.setLongitude(getDouble(this.mLongitude));
 		
 		double dist1Km = Math.round(location.distanceTo(homeLoc)*.001);
 		double distMi = Math.round(0.621371 * dist1Km);
