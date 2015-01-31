@@ -82,7 +82,7 @@ function populateTableWithTitle(theTable, options,theTitle)
 function populateList()
 {
 	var theTable = createMyTable();
-	var lang = ["Java", "C++"];
+	var lang = ["C++", "Java"];
 	
 	populateTableWithTitle( theTable, lang, "Languages");
 	
@@ -92,16 +92,18 @@ function populateList()
 	var sengr = ["Agile", "Scrum Master", "Project Management", "Estimating", "Scoping", "Test Driven Development (TDD)",
 	             "Dependency Injection"];
 	populateTableWithTitle(theTable, sengr, "Software Engineering");
-	
+		
+	var eclipse = ["Eclipse", "GEF", "EMF", "xText", "RCP", "SWT", "jFace", "XML", "XSD", "guice"];
+	populateTableWithTitle(theTable, eclipse, "Eclipse Tools");
+
+	var cpp = ["Visual Studio", "Boost", "Performance Tuning", "Memory Mapped Files", "DirectX", "COM", "Yacc/Lexx"];
+	populateTableWithTitle(theTable, cpp, "C++ Tools");
+
 	var db = ["Hana", "Oracle", "DB2", "SQL", "Database Design", "JDBC"];
 	populateTableWithTitle(theTable, db, "Database");
 	
-	var eclipse = ["Eclipse", "GEF", "EMF", "xText", "RCP", "SWT", "jFace", "XML", "XSD", "guice"];
-	populateTableWithTitle(theTable, eclipse, "Tools Eclipse");
-
-	var other = ["Cygwin", "UML", "html5", "javascript", "perforce", "git", "svn", "cvs", "Jira", "ClearCase", "Yacc/Lexx"];
+	var other = ["Cygwin", "UML", "html5", "javascript", "perforce", "git", "svn", "cvs", "Jira", "ClearCase"];
 	populateTableWithTitle(theTable, other, "Tools Other");
-
 	
 
 	var special = ["MVC", "UI development", "Usability", "UX", "Eclipse Plugin Development", "Graphical Modeling Tools", "Custom IDE's", 
@@ -219,11 +221,20 @@ function populateListOld()
     
     
 <section id="experience">
+
     	<h1>Work Experience</h1>
+		<article>
+        	<h2>Software Engineer - Innovative Defense Technologies</h2>
+            <time datetime="10/20/2015" class="start">October 2015</time>
+            <span class="end">Present</span>
+            <p>
+				Software engineer on ATRT:Analysis Manger product.
+ 			</p>
+        </article>
         <article>
         	<h2>Development Architect - SAP</h2>
             <time datetime="02/01/2010" class="start">February 2010</time>
-            <span class="end">Present</span>
+            <span class="end">September 2015</span>
             <p>
             	Lead development activities (design, scoping, scheduling, and implementation) for all current shipping releases of SAP ESP Studio and Hana ESP Studio plugins. Serve as development lead and development architect for standalone ESP Studio and Hana ESP plugins. Manage virtual ESP Studio team of 2-4 software engineers. Acting scrum master of ESP team and participate in other ESP scrums to resolve UI end to end dependencies. Represent ESP team as part of larger Hana Studio team, resolving issues of graphical tool harmonization and standard UI behavior.
  			</p>
