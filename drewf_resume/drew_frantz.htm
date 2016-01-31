@@ -102,9 +102,9 @@ function populateList()
 	var other = ["boost", "catch.hpp", "gson", "json", "glassfish", "swing", "jenkins", "advanced installer", "profiling C++ Java", "Cygwin", "UML", "html5", "javascript", "perforce", "git", "svn", "cvs", "Jira", "ClearCase", "Yacc/Lexx"];
 	populateTableWithTitle(theTable, other, "Tools Other");
 
-	var special = ["Performance Tuning C++ Java", "parser", "binary file readers", "MVC", "UI development", "Usability", "UX", "Eclipse Plugin Development", "Graphical Modeling Tools", "Custom IDE's", 
+	var special = ["Performance Tuning C++ Java", "binary file readers", "MVC", "UI development", "Usability", "UX", "Eclipse Plugin Development", "Graphical Modeling Tools", "Custom IDE's", 
 	               "DSL Design", "DSL editors", "Commercial Product Development", "Complex Event Processing",
-	               "Scripting Integration", "Iterative Development"];
+	               "Scripting Integration", "Iterative Development", "parser", "code generators", "reverse engineering tools"];
 	   
 	populateTableWithTitle(theTable, special, "Specialized Skills");
 	
@@ -113,40 +113,7 @@ function populateList()
 	populateOptions("Interests", misc);
 
 }
-function populateListOld()
-{
-   
-	var lang = ["C++", "Java"];
-	populateOptionsWithTitle("Skills", lang, "Languages");
-	
-	var plat = ["Windows", "Linux"];
-	populateOptionsWithTitle("Skills", plat, "Platforms");
-	
-	var sengr = ["Agile", "Scrum Master", "Project Management", "Estimating", "Scoping", "Test Driven Development (TDD)",
-	             "Dependency Injection"];
-	populateOptionsWithTitle("Skills", sengr, "Software Engineering");
-	
-	var db = ["PostgresSQL", "Hana", "Oracle", "DB2", "SQL", "Database Design", "JDBC"];
-	populateOptionsWithTitle("Skills", db, "Database");
-	
-	var eclipse = ["Eclipse", "GEF", "EMF", "xText", "RCP", "SWT", "jFace", "XML", "XSD", "guice"];
-	populateOptionsWithTitle("Skills", eclipse, "Tools Eclipse");
 
-	var other = ["boost", "catch.hpp", "gson", "json", "glassfish", "swing", "jenkins", "advanced installer", "profiling C++ Java", "Cygwin", "UML", "html5", "javascript", "perforce", "git", "svn", "cvs", "Jira", "ClearCase", "Yacc/Lexx"];
-	populateOptionsWithTitle("Skills", other, "Tools Other");
-
-	
-
-	var special = ["Performance Tuning C++ Java", "parser", "custom binary file readers", "MVC", "UI development", "Usability", "UX", "Eclipse Plugin Development", "Graphical Modeling Tools", "Custom IDE's", 
-	               "DSL Design", "DSL editors", "Commercial Product Development", "Complex Event Processing",
-	               "Scripting Integration", "Iterative Development", "parsers"];
-	   
-	populateOptionsWithTitle("Skills", special, "Specialized Skills");
-	
-	var misc = ["software engineering", "technology", "music", "coach youth football/basketball", "fishing",
-                "guitar", "philly sports"];
-	populateOptions("Interests", misc);
-}
 </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -166,11 +133,11 @@ function populateListOld()
     	<h1 class="name" title="Drew Frantz, Software Engineering Professional, Development Lead, Software Engineer/Architect, 08057">Drew Frantz</h1>
         <h2 class="role">Software Engineering Professional, Development Lead, Software Engineer/Architect</h2>
     	<ul class="contact">
-        	<li ><a href="http://vizibolic.com/~drewqb1/drew_frantz.htm" title="Drew Frantz">Home</a></li>
+        	<li ><a href="http://vizibolic.com" title="Drew Frantz">Home</a></li>
         	<li class="email"><a href="mailto:drew@acm.org" >drew@acm.org</a></li>
             <li class="tel">609-504-4869</li>
         	<li ><a href="https://www.linkedin.com/in/drewfrantz" title="Drew Frantz - LinkedIn">Drew Frantz - LinkedIn</a></li>
-            <li ><a href="http://vizibolic.com/~drewqb1/portfolio.htm" title="Drew Frantz -Portfolio">Portfolio</a></li>
+            <li ><a href="http://vizibolic.com/portfolio.htm" title="Drew Frantz -Portfolio">Portfolio</a></li>
 		</ul>
     </header>
 
@@ -220,7 +187,7 @@ function populateListOld()
     	<h1>Work Experience</h1>
 		
 	   <article>
-        	<h2>Software Engineer - Innovative Defense Technologies (IDT)</h2>
+        	<h2>Software Engineer - <a href="http://idtus.com"> Innovative Defense Technologies (IDT) </a>  </h2 >
             <time datetime="10/01/2014" class="start">October 2014</time>
             <span class="end">Present</span>
             <p>
@@ -230,7 +197,7 @@ function populateListOld()
 			</ul>
         </article>		
         <article>
-        	<h2>Development Architect - SAP</h2>
+        	<h2>Development Architect - <a href="http://www.sap.com">SAP </a> </h2>
             <time datetime="02/01/2010" class="start">February 2010</time>
             <span class="end">September 2014</span>
             <p>
@@ -249,7 +216,7 @@ function populateListOld()
  			        
         </article>
         <article>
-        	<h2>IDE/GUI Lead Software Architect - Aleri</h2>
+        	<h2>IDE/GUI Lead Software Architect - Aleri </h2>
             <time datetime="08/15/2005" class="start">August 2005</time>
             <time datetime="01/20/2010" class="end">January 2010</time>
             <p>Led ground-up development of IDE for Aleri complex event processing platform called Aleri Studio. Served as IDE architect and development lead on all release of Aleri Studio product until company was acquired by Sybase in 2010(Sybase acquired by SAP 1 month later). 
@@ -264,7 +231,7 @@ function populateListOld()
 			</ul> 			
         </article>
 		<article>
-        	<h2>Senior Software Engineering Consultant - IBM</h2>
+        	<h2>Senior Software Engineering Consultant - <a href="http://www.ibm.com">IBM </a> </h2>
             <time datetime="10/01/2004" class="start">October 2004</time>
             <time datetime="08/15/2005" class="end">August 2005</time>
             <p>As a member of the ISSR I have engaged with various clients in the NJ, NY, PA area (Lockheed, Telcordia, Verizon Wireless, MCI, Navy, PJM, Och-Ziff, Vanguard, UPS, etc.) as a senior software engineering consultant. As a senior consultant I have performed the following duties at various clients:
