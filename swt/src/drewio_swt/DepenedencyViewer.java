@@ -183,7 +183,6 @@ public class DepenedencyViewer {
 		buildGraphNodes(myGraph, m_ViewMap, m_ModelMap);
 		buildGraphEdges(myGraph, m_ViewMap, m_ModelMap);
 		
-		
 		myGraph.setScrollBarVisibility(FigureCanvas.ALWAYS);
 		myGraph.addSelectionListener(new SelectionListener() 
 		{
