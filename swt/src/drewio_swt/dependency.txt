@@ -1,0 +1,44 @@
+// This is the output from running vc/bin/dumpbin /dependendents /nologo *.dll on a dir of files
+Dump of file A.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    MSVCR120.dll
+    MSVCP120.dll
+    B.dll
+    C.dll
+    D.dll
+    KERNEL32.dll
+    USER32.dll
+
+Dump of file B.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+    C.dll
+    D.dll
+    KERNEL32.dll
+
+Dump of file C.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+   
+    KERNEL32.dll
+
+Dump of file D.dll
+
+File Type: DLL
+
+  Image has the following dependencies:
+
+   
+    ADVAPI32.dll
+    KERNEL32.dll
+
