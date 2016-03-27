@@ -8,13 +8,14 @@
    
   <link rel="stylesheet" type="text/css" href="df_style.css">
     <title>MG Lax 2016 Pictures</title>
+</head>	
 <script>
 	
 	var m_start=4113;
 	var m_end=4241;
 	var m_Slide=m_end;
-	//var nUrl = "http://vizibolic.com/lax2016/"; 
-	var nUrl = "C:/Users/drew/Desktop/host/lax/images/";
+	var nUrl = "http://vizibolic.com/lax2016/"; 
+	//var nUrl = "C:/Users/drew/Desktop/host/lax/images/";
 	function createLink(theInput, theName, addbreak)
     {
 	var a = document.createElement('a');
@@ -54,6 +55,13 @@
     {
 		createPictures();
 	}
+	function openLink()
+    {
+		var nm = "IMG_" + m_Slide + ".JPG";
+		var pic = nUrl+nm; 
+		window.open(pic,nm);
+		window.open(pic);
+	}
 	
 	function showSlide(bNext)
     {
@@ -81,30 +89,30 @@
     }
 </script>
 
-</head>
+
 <body onload="showSlide(false)">
 	<header class="Drew">
-    	<h1 class="name" title="MG Lax 2016 Pictures">MG lax 2016</h1>
+    	<h1 class="name" title="MG Lax 2016 Pictures">MG Lax 2016</h1>
       
     </header>
 
-	<section id="summary">
+	<section id="section">
     	<figure>
   				<img src="http://www.moorestownglax.com/images/team_pix/team.jpg"  alt="" >
 		</figure>
 	        	
     </section>
-  <section id="summary">
+  <section id="section">
     	<h1>Summit at Moorestown</h1>
         <p>
-		<script>
-		createSummit();
-		</script>
-			
+					
 		<figure>
   				<img src="" id="slide" onClick="showSlide();" alt="" width="600" height="400">
+				</br>
 				<button onclick="showSlide(true);">Next</button>
 				<button onclick="showSlide(false);">Previous</button>
+				<button onclick="openLink(false);">Open</button>
+				
 			</figure>
 		</p>
         	
