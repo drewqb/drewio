@@ -10,78 +10,38 @@
     <title>MG Lax 2016 Pictures</title>
 </head>	
 <script>
+	var summit = {m_id:"summit_slides", m_start:"4113", m_end:"4241", m_Slide:"4241", m_nUrl:"http://vizibolic.com/lax2016/"};
 	
-	var m_start=4113;
-	var m_end=4241;
-	var m_Slide=m_end;
-	var nUrl = "http://vizibolic.com/lax2016/"; 
-	//var nUrl = "C:/Users/drew/Desktop/host/lax/images/";
-	function createLink(theInput, theName, addbreak)
-    {
-	var a = document.createElement('a');
-	var linkHref = document.createTextNode(theName);
-	a.appendChild(linkHref);
-	a.href = theInput;
- 	
-	var buffer = document.createTextNode("         ");
+	//var m_nUrl = "http://vizibolic.com/lax2016/"; 
+	//var m_nUrl = "C:/Users/drew/Desktop/host/lax/images/";
 	
-	document.body.appendChild(a);
-	document.body.appendChild(buffer);
-	if(addbreak)
-	{
-		var lineBreak = document.createElement("br");
-		document.body.appendChild(lineBreak);
-	}
-	
-    }
-	function createPictures()
+	function openLink(theGame)
     {
-	  
-		for (var i = m_start; i < m_end; i++) 
-		{
-			var nm = "IMG_" + i + ".JPG";
-			var pic = nUrl+nm; 
-			if(i%4 == 0)
-			{
-				createLink(pic,nm,true);
-			}
-			else
-			{
-				createLink(pic,nm,false);
-			}
-		}
-	}
-	function createSummit()
-    {
-		createPictures();
-	}
-	function openLink()
-    {
-		var nm = "IMG_" + m_Slide + ".JPG";
-		var pic = nUrl+nm; 
+		var nm = "IMG_" + theGame.m_Slide + ".JPG";
+		var pic = theGame.m_nUrl+nm; 
 		window.open(pic,nm);
 		window.open(pic);
 	}
 	
-	function showSlide(bNext)
+	function showSlide(theGame, bNext)
     {
 		if(bNext)
 		{
-			++m_Slide;
+			++theGame.m_Slide;
 		}
 		else 
 		{
-			--m_Slide;
+			--theGame.m_Slide;
 		}
-		if(m_Slide > m_end-1 || m_Slide < m_start)
+		if(theGame.m_Slide > theGame.m_end-1 || theGame.m_Slide < theGame.m_start)
 		{
-			m_Slide=m_start;
+			theGame.m_Slide=theGame.m_start;
 		}
 		
-		var theSection = document.getElementById("slide");
+		var theSection = document.getElementById(theGame.m_id);
 		if(theSection==null) return;
-		var nm = "IMG_" + m_Slide + ".JPG";
-		var pic = nUrl+nm; 
+		var nm = "IMG_" + theGame.m_Slide + ".JPG";
+		var pic = theGame.m_nUrl+nm; 
 		theSection.src= pic;
 		theSection.title= nm;
 		
@@ -90,7 +50,7 @@
 </script>
 
 
-<body onload="showSlide(false)">
+<body onload="showSlide(summit,false)">
 	<header class="Drew">
     	<h1 class="name" title="MG Lax 2016 Pictures">MG Lax 2016</h1>
       
@@ -106,14 +66,12 @@
     	<h1>Summit at Moorestown</h1>
         <p>
 					
-		<figure>
-  				<img src="" id="slide" onClick="showSlide();" alt="" width="600" height="400">
-				</br>
-				<button onclick="showSlide(true);">Next</button>
-				<button onclick="showSlide(false);">Previous</button>
-				<button onclick="openLink(false);">Open</button>
-				
-			</figure>
+		<img src="" id="summit_slides" onClick="showSlide(summit,false);" alt="" width="600" height="400">
+		</br>
+		<img src="previous.gif" onclick="showSlide(summit,false);" title="Previous" width="50" height="50" ></img>
+		<img src="next.gif" onclick="showSlide(summit,true);" title="Next" width="50" height="50" ></img>
+		<img src="download.gif" onclick="openLink(summit);" title="Open" width="50" height="50" ></img>
+		
 		</p>
         	
     </section>    
