@@ -10,9 +10,11 @@
     <title>MG Lax 2016 Pictures</title>
 </head>	
 <script>
-	var summit = {m_id:"all_slides", m_start:"4113", m_end:"4241", m_Slide:"4241", m_nUrl:"http://vizibolic.com/lax2016/"};
-	var rumson = {m_id:"all_slides", m_start:"4241", m_end:"4331", m_Slide:"4331", m_nUrl:"http://vizibolic.com/lax2016/rumson/"};
-	var m_Game=summit;
+	var summit = {m_name:"summit",m_id:"all_slides", m_start:"4113", m_end:"4241", m_Slide:"4241", m_nUrl:"http://vizibolic.com/lax2016/"};
+	var rumson = {m_name:"rumson",m_id:"all_slides", m_start:"4241", m_end:"4331", m_Slide:"4331", m_nUrl:"http://vizibolic.com/lax2016/rumson/"};
+	var m_Games = [summit,rumson];
+	
+	var m_Game=m_Games[0];
 	//var m_nUrl = "http://vizibolic.com/lax2016/"; 
 	//var m_nUrl = "C:/Users/drew/Desktop/host/lax/images/";
 	
@@ -52,20 +54,17 @@
 	{
 		var sel = document.getElementById("m_Selection");
 		var game = sel.options[sel.selectedIndex].value;
-		if(game=="summit")
+		for(i=0;i<m_Games.length;++i)
 		{
-			m_Game=summit;
-			m_Game.m_Slide = m_Game.m_start-1;
-			showSlide(summit,false);
-			return;
+			if(m_Games[i].m_name==game)
+			{
+				m_Game=m_Games[i];
+				m_Game.m_Slide = m_Game.m_start-1;
+				showSlide(m_Game,false);
+				return;
+			}
 		}
-		if(game=="rumson")
-		{
-			m_Game=rumson;
-			m_Game.m_Slide = m_Game.m_start-1;
-			showSlide(rumson,false);
-			return;
-		}
+	
 	}
 </script>
 
