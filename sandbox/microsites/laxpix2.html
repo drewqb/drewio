@@ -10,8 +10,9 @@
     <title>MG Lax 2016 Pictures</title>
 </head>	
 <script>
-	var summit = {m_id:"summit_slides", m_start:"4113", m_end:"4241", m_Slide:"4241", m_nUrl:"http://vizibolic.com/lax2016/"};
-	
+	var summit = {m_id:"all_slides", m_start:"4113", m_end:"4241", m_Slide:"4241", m_nUrl:"http://vizibolic.com/lax2016/"};
+	var rumson = {m_id:"all_slides", m_start:"4241", m_end:"4331", m_Slide:"4331", m_nUrl:"http://vizibolic.com/lax2016/rumson/"};
+	var m_Game=summit;
 	//var m_nUrl = "http://vizibolic.com/lax2016/"; 
 	//var m_nUrl = "C:/Users/drew/Desktop/host/lax/images/";
 	
@@ -47,6 +48,25 @@
 		
 	
     }
+	function selectGame()
+	{
+		var sel = document.getElementById("m_Selection");
+		var game = sel.options[sel.selectedIndex].value;
+		if(game=="summit")
+		{
+			m_Game=summit;
+			m_Game.m_Slide = m_Game.m_start-1;
+			showSlide(summit,false);
+			return;
+		}
+		if(game=="rumson")
+		{
+			m_Game=rumson;
+			m_Game.m_Slide = m_Game.m_start-1;
+			showSlide(rumson,false);
+			return;
+		}
+	}
 </script>
 
 
@@ -65,12 +85,20 @@
   <section id="section">
     	<h1>Summit at Moorestown</h1>
         <p>
-					
-		<img src="" id="summit_slides" onClick="showSlide(summit,false);" alt="" width="600" height="400">
 		</br>
-		<img src="previous.gif" onclick="showSlide(summit,false);" title="Previous" width="50" height="50" ></img>
-		<img src="next.gif" onclick="showSlide(summit,true);" title="Next" width="50" height="50" ></img>
-		<img src="download.gif" onclick="openLink(summit);" title="Open" width="50" height="50" ></img>
+		<select id="m_Selection" onchange="selectGame()" style="width: 150px; ">
+			<option value="summit">Summit</option>
+			<option value="rumson">Rumson</option>
+			
+		</select>
+		</br>
+		<img src="previous.gif" onclick="showSlide(m_Game,false);" title="Previous" width="50" height="50" ></img>
+		<img src="next.gif" onclick="showSlide(m_Game,true);" title="Next" width="50" height="50" ></img>
+		<img src="download.gif" onclick="openLink(m_Game);" title="Open" width="50" height="50" ></img>
+		
+		</p>		
+		<img src="" id="all_slides" onClick="showSlide(m_Game,false);" alt="" width="600" height="400" style="padding-top: cm;">
+		
 		
 		</p>
         	
