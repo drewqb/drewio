@@ -1,0 +1,57 @@
+/** Handle GEF AbsoluteBendpoint and Point when loading/writing to XML
+*/
+
+/**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public Point createPointFromString(EDataType eDataType, String initialValue)
+    {
+        if (initialValue == null || initialValue.length() == 0)
+            return new Point();
+        
+        initialValue = initialValue.trim();
+        StringTokenizer tokenizer = new StringTokenizer(initialValue, ","); //$NON-NLS-1$
+        int x = 0, y = 0;
+        try {
+            x = new Integer(tokenizer.nextToken().trim()).intValue();
+            y = new Integer(tokenizer.nextToken().trim()).intValue();
+        } catch (NumberFormatException nfe) {}
+        return new Point(x, y);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertPointToString(EDataType eDataType, Object instanceValue)
+    {
+        if (instanceValue == null)
+            return "0,0";
+        Point p = (Point)instanceValue;
+        return p.x + "," + p.y;
+    }
+
+    
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public AbsoluteBendpoint createAbsoluteBendpointFromString(EDataType eDataType, String initialValue)
+    {
+        return new AbsoluteBendpoint(createPointFromString(null, initialValue));
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated NOT
+     */
+    public String convertAbsoluteBendpointToString(EDataType eDataType, Object instanceValue)
+    {
+        return convertPointToString(null, ((Bendpoint)instanceValue).getLocation());
+    }    
