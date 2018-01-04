@@ -2225,9 +2225,9 @@ rule__MessageSectionDecl__Group_3__1__Impl
     }
 :
 (
-{ before(grammarAccess.getMessageSectionDeclAccess().getActorsAssignment_3_1()); }
-(rule__MessageSectionDecl__ActorsAssignment_3_1)
-{ after(grammarAccess.getMessageSectionDeclAccess().getActorsAssignment_3_1()); }
+{ before(grammarAccess.getMessageSectionDeclAccess().getMessagesAssignment_3_1()); }
+(rule__MessageSectionDecl__MessagesAssignment_3_1)
+{ after(grammarAccess.getMessageSectionDeclAccess().getMessagesAssignment_3_1()); }
 )
 
 ;
@@ -2861,14 +2861,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MessageSectionDecl__ActorsAssignment_3_1
+rule__MessageSectionDecl__MessagesAssignment_3_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getMessageSectionDeclAccess().getActorsMessageDeclParserRuleCall_3_1_0()); }
-	ruleMessageDecl{ after(grammarAccess.getMessageSectionDeclAccess().getActorsMessageDeclParserRuleCall_3_1_0()); }
+{ before(grammarAccess.getMessageSectionDeclAccess().getMessagesMessageDeclParserRuleCall_3_1_0()); }
+	ruleMessageDecl{ after(grammarAccess.getMessageSectionDeclAccess().getMessagesMessageDeclParserRuleCall_3_1_0()); }
 )
 
 ;

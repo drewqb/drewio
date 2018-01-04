@@ -204,7 +204,7 @@ public class TxtUMLSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (messages+=MessageDecl actors+=MessageDecl*)
+	 *     (messages+=MessageDecl messages+=MessageDecl*)
 	 */
 	protected void sequence_MessageSectionDecl(EObject context, MessageSectionDecl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

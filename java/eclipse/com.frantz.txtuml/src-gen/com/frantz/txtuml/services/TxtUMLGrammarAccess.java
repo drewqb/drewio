@@ -465,15 +465,15 @@ public class TxtUMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMessagesMessageDeclParserRuleCall_2_0 = (RuleCall)cMessagesAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cActorsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cActorsMessageDeclParserRuleCall_3_1_0 = (RuleCall)cActorsAssignment_3_1.eContents().get(0);
+		private final Assignment cMessagesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cMessagesMessageDeclParserRuleCall_3_1_0 = (RuleCall)cMessagesAssignment_3_1.eContents().get(0);
 		private final Keyword cSemicolonKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//MessageSectionDecl:
-		//	"messages" ":" messages+=MessageDecl ("," actors+=MessageDecl)* ";";
+		//	"messages" ":" messages+=MessageDecl ("," messages+=MessageDecl)* ";";
 		public ParserRule getRule() { return rule; }
 
-		//"messages" ":" messages+=MessageDecl ("," actors+=MessageDecl)* ";"
+		//"messages" ":" messages+=MessageDecl ("," messages+=MessageDecl)* ";"
 		public Group getGroup() { return cGroup; }
 
 		//"messages"
@@ -488,17 +488,17 @@ public class TxtUMLGrammarAccess extends AbstractGrammarElementFinder {
 		//MessageDecl
 		public RuleCall getMessagesMessageDeclParserRuleCall_2_0() { return cMessagesMessageDeclParserRuleCall_2_0; }
 
-		//("," actors+=MessageDecl)*
+		//("," messages+=MessageDecl)*
 		public Group getGroup_3() { return cGroup_3; }
 
 		//","
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
 
-		//actors+=MessageDecl
-		public Assignment getActorsAssignment_3_1() { return cActorsAssignment_3_1; }
+		//messages+=MessageDecl
+		public Assignment getMessagesAssignment_3_1() { return cMessagesAssignment_3_1; }
 
 		//MessageDecl
-		public RuleCall getActorsMessageDeclParserRuleCall_3_1_0() { return cActorsMessageDeclParserRuleCall_3_1_0; }
+		public RuleCall getMessagesMessageDeclParserRuleCall_3_1_0() { return cMessagesMessageDeclParserRuleCall_3_1_0; }
 
 		//";"
 		public Keyword getSemicolonKeyword_4() { return cSemicolonKeyword_4; }
@@ -888,7 +888,7 @@ public class TxtUMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MessageSectionDecl:
-	//	"messages" ":" messages+=MessageDecl ("," actors+=MessageDecl)* ";";
+	//	"messages" ":" messages+=MessageDecl ("," messages+=MessageDecl)* ";";
 	public MessageSectionDeclElements getMessageSectionDeclAccess() {
 		return (pMessageSectionDecl != null) ? pMessageSectionDecl : (pMessageSectionDecl = new MessageSectionDeclElements());
 	}

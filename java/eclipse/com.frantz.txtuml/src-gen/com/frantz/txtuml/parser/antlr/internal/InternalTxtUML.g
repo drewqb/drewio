@@ -861,16 +861,16 @@ ruleMessageSectionDecl returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMessageSectionDeclAccess().getActorsMessageDeclParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getMessageSectionDeclAccess().getMessagesMessageDeclParserRuleCall_3_1_0()); 
 	    }
-		lv_actors_4_0=ruleMessageDecl		{
+		lv_messages_4_0=ruleMessageDecl		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMessageSectionDeclRule());
 	        }
        		add(
        			$current, 
-       			"actors",
-        		lv_actors_4_0, 
+       			"messages",
+        		lv_messages_4_0, 
         		"MessageDecl");
 	        afterParserOrEnumRuleCall();
 	    }

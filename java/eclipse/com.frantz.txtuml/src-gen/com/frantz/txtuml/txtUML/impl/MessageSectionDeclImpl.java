@@ -26,7 +26,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.frantz.txtuml.txtUML.impl.MessageSectionDeclImpl#getMessages <em>Messages</em>}</li>
- *   <li>{@link com.frantz.txtuml.txtUML.impl.MessageSectionDeclImpl#getActors <em>Actors</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,16 +42,6 @@ public class MessageSectionDeclImpl extends SequenceSectionDeclImpl implements M
    * @ordered
    */
   protected EList<MessageDecl> messages;
-
-  /**
-   * The cached value of the '{@link #getActors() <em>Actors</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getActors()
-   * @generated
-   * @ordered
-   */
-  protected EList<MessageDecl> actors;
 
   /**
    * <!-- begin-user-doc -->
@@ -94,20 +83,6 @@ public class MessageSectionDeclImpl extends SequenceSectionDeclImpl implements M
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<MessageDecl> getActors()
-  {
-    if (actors == null)
-    {
-      actors = new EObjectContainmentEList<MessageDecl>(MessageDecl.class, this, TxtUMLPackage.MESSAGE_SECTION_DECL__ACTORS);
-    }
-    return actors;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -115,8 +90,6 @@ public class MessageSectionDeclImpl extends SequenceSectionDeclImpl implements M
     {
       case TxtUMLPackage.MESSAGE_SECTION_DECL__MESSAGES:
         return ((InternalEList<?>)getMessages()).basicRemove(otherEnd, msgs);
-      case TxtUMLPackage.MESSAGE_SECTION_DECL__ACTORS:
-        return ((InternalEList<?>)getActors()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -133,8 +106,6 @@ public class MessageSectionDeclImpl extends SequenceSectionDeclImpl implements M
     {
       case TxtUMLPackage.MESSAGE_SECTION_DECL__MESSAGES:
         return getMessages();
-      case TxtUMLPackage.MESSAGE_SECTION_DECL__ACTORS:
-        return getActors();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,10 +125,6 @@ public class MessageSectionDeclImpl extends SequenceSectionDeclImpl implements M
         getMessages().clear();
         getMessages().addAll((Collection<? extends MessageDecl>)newValue);
         return;
-      case TxtUMLPackage.MESSAGE_SECTION_DECL__ACTORS:
-        getActors().clear();
-        getActors().addAll((Collection<? extends MessageDecl>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -175,9 +142,6 @@ public class MessageSectionDeclImpl extends SequenceSectionDeclImpl implements M
       case TxtUMLPackage.MESSAGE_SECTION_DECL__MESSAGES:
         getMessages().clear();
         return;
-      case TxtUMLPackage.MESSAGE_SECTION_DECL__ACTORS:
-        getActors().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -194,8 +158,6 @@ public class MessageSectionDeclImpl extends SequenceSectionDeclImpl implements M
     {
       case TxtUMLPackage.MESSAGE_SECTION_DECL__MESSAGES:
         return messages != null && !messages.isEmpty();
-      case TxtUMLPackage.MESSAGE_SECTION_DECL__ACTORS:
-        return actors != null && !actors.isEmpty();
     }
     return super.eIsSet(featureID);
   }

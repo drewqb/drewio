@@ -503,16 +503,6 @@ public class TxtUMLPackageImpl extends EPackageImpl implements TxtUMLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMessageSectionDecl_Actors()
-  {
-    return (EReference)messageSectionDeclEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getActorDecl()
   {
     return actorDeclEClass;
@@ -697,7 +687,6 @@ public class TxtUMLPackageImpl extends EPackageImpl implements TxtUMLPackage
 
     messageSectionDeclEClass = createEClass(MESSAGE_SECTION_DECL);
     createEReference(messageSectionDeclEClass, MESSAGE_SECTION_DECL__MESSAGES);
-    createEReference(messageSectionDeclEClass, MESSAGE_SECTION_DECL__ACTORS);
 
     actorDeclEClass = createEClass(ACTOR_DECL);
     createEAttribute(actorDeclEClass, ACTOR_DECL__NAME);
@@ -793,7 +782,6 @@ public class TxtUMLPackageImpl extends EPackageImpl implements TxtUMLPackage
 
     initEClass(messageSectionDeclEClass, MessageSectionDecl.class, "MessageSectionDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMessageSectionDecl_Messages(), this.getMessageDecl(), null, "messages", null, 0, -1, MessageSectionDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMessageSectionDecl_Actors(), this.getMessageDecl(), null, "actors", null, 0, -1, MessageSectionDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actorDeclEClass, ActorDecl.class, "ActorDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getActorDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, ActorDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

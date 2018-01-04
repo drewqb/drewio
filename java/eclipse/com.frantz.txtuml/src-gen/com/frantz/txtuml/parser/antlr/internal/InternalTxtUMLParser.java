@@ -24,34 +24,34 @@ public class InternalTxtUMLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'class'", "'inherits'", "','", "'{'", "'}'", "';'", "':'", "'('", "')'", "'sequence'", "'actors'", "'messages'", "'-->'", "'<--'", "'boolean'", "'string'", "'integer'", "'double'", "'public'", "'private'"
     };
-    public static final int RULE_ID=4;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
-    public static final int T__19=19;
     public static final int RULE_STRING=6;
-    public static final int T__16=16;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
-    public static final int T__12=12;
+    public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__14=14;
+    public static final int T__12=12;
     public static final int T__13=13;
-    public static final int RULE_INT=5;
+    public static final int T__14=14;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int RULE_ID=4;
     public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=5;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -2153,7 +2153,7 @@ public class InternalTxtUMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMessageSectionDecl"
-    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:827:1: ruleMessageSectionDecl returns [EObject current=null] : (otherlv_0= 'messages' otherlv_1= ':' ( (lv_messages_2_0= ruleMessageDecl ) ) (otherlv_3= ',' ( (lv_actors_4_0= ruleMessageDecl ) ) )* otherlv_5= ';' ) ;
+    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:827:1: ruleMessageSectionDecl returns [EObject current=null] : (otherlv_0= 'messages' otherlv_1= ':' ( (lv_messages_2_0= ruleMessageDecl ) ) (otherlv_3= ',' ( (lv_messages_4_0= ruleMessageDecl ) ) )* otherlv_5= ';' ) ;
     public final EObject ruleMessageSectionDecl() throws RecognitionException {
         EObject current = null;
 
@@ -2163,17 +2163,17 @@ public class InternalTxtUMLParser extends AbstractInternalAntlrParser {
         Token otherlv_5=null;
         EObject lv_messages_2_0 = null;
 
-        EObject lv_actors_4_0 = null;
+        EObject lv_messages_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:830:28: ( (otherlv_0= 'messages' otherlv_1= ':' ( (lv_messages_2_0= ruleMessageDecl ) ) (otherlv_3= ',' ( (lv_actors_4_0= ruleMessageDecl ) ) )* otherlv_5= ';' ) )
-            // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:831:1: (otherlv_0= 'messages' otherlv_1= ':' ( (lv_messages_2_0= ruleMessageDecl ) ) (otherlv_3= ',' ( (lv_actors_4_0= ruleMessageDecl ) ) )* otherlv_5= ';' )
+            // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:830:28: ( (otherlv_0= 'messages' otherlv_1= ':' ( (lv_messages_2_0= ruleMessageDecl ) ) (otherlv_3= ',' ( (lv_messages_4_0= ruleMessageDecl ) ) )* otherlv_5= ';' ) )
+            // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:831:1: (otherlv_0= 'messages' otherlv_1= ':' ( (lv_messages_2_0= ruleMessageDecl ) ) (otherlv_3= ',' ( (lv_messages_4_0= ruleMessageDecl ) ) )* otherlv_5= ';' )
             {
-            // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:831:1: (otherlv_0= 'messages' otherlv_1= ':' ( (lv_messages_2_0= ruleMessageDecl ) ) (otherlv_3= ',' ( (lv_actors_4_0= ruleMessageDecl ) ) )* otherlv_5= ';' )
-            // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:831:3: otherlv_0= 'messages' otherlv_1= ':' ( (lv_messages_2_0= ruleMessageDecl ) ) (otherlv_3= ',' ( (lv_actors_4_0= ruleMessageDecl ) ) )* otherlv_5= ';'
+            // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:831:1: (otherlv_0= 'messages' otherlv_1= ':' ( (lv_messages_2_0= ruleMessageDecl ) ) (otherlv_3= ',' ( (lv_messages_4_0= ruleMessageDecl ) ) )* otherlv_5= ';' )
+            // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:831:3: otherlv_0= 'messages' otherlv_1= ':' ( (lv_messages_2_0= ruleMessageDecl ) ) (otherlv_3= ',' ( (lv_messages_4_0= ruleMessageDecl ) ) )* otherlv_5= ';'
             {
             otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleMessageSectionDecl1809); 
 
@@ -2214,7 +2214,7 @@ public class InternalTxtUMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:857:2: (otherlv_3= ',' ( (lv_actors_4_0= ruleMessageDecl ) ) )*
+            // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:857:2: (otherlv_3= ',' ( (lv_messages_4_0= ruleMessageDecl ) ) )*
             loop13:
             do {
                 int alt13=2;
@@ -2227,23 +2227,23 @@ public class InternalTxtUMLParser extends AbstractInternalAntlrParser {
 
                 switch (alt13) {
             	case 1 :
-            	    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:857:4: otherlv_3= ',' ( (lv_actors_4_0= ruleMessageDecl ) )
+            	    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:857:4: otherlv_3= ',' ( (lv_messages_4_0= ruleMessageDecl ) )
             	    {
             	    otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleMessageSectionDecl1855); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getMessageSectionDeclAccess().getCommaKeyword_3_0());
             	        
-            	    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:861:1: ( (lv_actors_4_0= ruleMessageDecl ) )
-            	    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:862:1: (lv_actors_4_0= ruleMessageDecl )
+            	    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:861:1: ( (lv_messages_4_0= ruleMessageDecl ) )
+            	    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:862:1: (lv_messages_4_0= ruleMessageDecl )
             	    {
-            	    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:862:1: (lv_actors_4_0= ruleMessageDecl )
-            	    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:863:3: lv_actors_4_0= ruleMessageDecl
+            	    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:862:1: (lv_messages_4_0= ruleMessageDecl )
+            	    // ../com.frantz.txtuml/src-gen/com/frantz/txtuml/parser/antlr/internal/InternalTxtUML.g:863:3: lv_messages_4_0= ruleMessageDecl
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getMessageSectionDeclAccess().getActorsMessageDeclParserRuleCall_3_1_0()); 
+            	    	        newCompositeNode(grammarAccess.getMessageSectionDeclAccess().getMessagesMessageDeclParserRuleCall_3_1_0()); 
             	    	    
             	    pushFollow(FOLLOW_ruleMessageDecl_in_ruleMessageSectionDecl1876);
-            	    lv_actors_4_0=ruleMessageDecl();
+            	    lv_messages_4_0=ruleMessageDecl();
 
             	    state._fsp--;
 
@@ -2253,8 +2253,8 @@ public class InternalTxtUMLParser extends AbstractInternalAntlrParser {
             	    	        }
             	           		add(
             	           			current, 
-            	           			"actors",
-            	            		lv_actors_4_0, 
+            	           			"messages",
+            	            		lv_messages_4_0, 
             	            		"MessageDecl");
             	    	        afterParserOrEnumRuleCall();
             	    	    

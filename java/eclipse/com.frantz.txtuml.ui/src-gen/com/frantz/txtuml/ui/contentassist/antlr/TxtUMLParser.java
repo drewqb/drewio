@@ -83,7 +83,7 @@ public class TxtUMLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActorSectionDeclAccess().getActorsAssignment_2(), "rule__ActorSectionDecl__ActorsAssignment_2");
 					put(grammarAccess.getActorSectionDeclAccess().getActorsAssignment_3_1(), "rule__ActorSectionDecl__ActorsAssignment_3_1");
 					put(grammarAccess.getMessageSectionDeclAccess().getMessagesAssignment_2(), "rule__MessageSectionDecl__MessagesAssignment_2");
-					put(grammarAccess.getMessageSectionDeclAccess().getActorsAssignment_3_1(), "rule__MessageSectionDecl__ActorsAssignment_3_1");
+					put(grammarAccess.getMessageSectionDeclAccess().getMessagesAssignment_3_1(), "rule__MessageSectionDecl__MessagesAssignment_3_1");
 					put(grammarAccess.getActorDeclAccess().getNameAssignment_0(), "rule__ActorDecl__NameAssignment_0");
 					put(grammarAccess.getActorDeclAccess().getClassRefAssignment_1(), "rule__ActorDecl__ClassRefAssignment_1");
 					put(grammarAccess.getMessageDeclAccess().getNameAssignment_0(), "rule__MessageDecl__NameAssignment_0");

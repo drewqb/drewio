@@ -47,8 +47,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="MessageSectionDecl" eSuperTypes="#//SequenceSectionDecl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="messages" upperBound="-1"
         eType="#//MessageDecl" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actors" upperBound="-1"
-        eType="#//MessageDecl" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActorDecl">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

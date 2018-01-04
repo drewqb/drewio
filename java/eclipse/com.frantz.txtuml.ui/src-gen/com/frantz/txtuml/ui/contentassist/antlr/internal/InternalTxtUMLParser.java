@@ -24,34 +24,34 @@ public class InternalTxtUMLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'-->'", "'<--'", "'boolean'", "'string'", "'integer'", "'double'", "'public'", "'private'", "'class'", "'{'", "'}'", "'inherits'", "','", "';'", "':'", "'('", "')'", "'sequence'", "'actors'", "'messages'"
     };
-    public static final int RULE_ID=4;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
-    public static final int T__19=19;
     public static final int RULE_STRING=6;
-    public static final int T__16=16;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
-    public static final int T__12=12;
+    public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__14=14;
+    public static final int T__12=12;
     public static final int T__13=13;
-    public static final int RULE_INT=5;
+    public static final int T__14=14;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int RULE_ID=4;
     public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=5;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -1500,11 +1500,11 @@ public class InternalTxtUMLParser extends AbstractInternalContentAssistParser {
                 if ( (LA3_1==RULE_ID) ) {
                     int LA3_6 = input.LA(3);
 
-                    if ( (LA3_6==EOF||(LA3_6>=23 && LA3_6<=24)) ) {
-                        alt3=2;
-                    }
-                    else if ( (LA3_6==26) ) {
+                    if ( (LA3_6==26) ) {
                         alt3=1;
+                    }
+                    else if ( (LA3_6==EOF||(LA3_6>=23 && LA3_6<=24)) ) {
+                        alt3=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -1528,11 +1528,11 @@ public class InternalTxtUMLParser extends AbstractInternalContentAssistParser {
                 if ( (LA3_2==RULE_ID) ) {
                     int LA3_6 = input.LA(3);
 
-                    if ( (LA3_6==EOF||(LA3_6>=23 && LA3_6<=24)) ) {
-                        alt3=2;
-                    }
-                    else if ( (LA3_6==26) ) {
+                    if ( (LA3_6==26) ) {
                         alt3=1;
+                    }
+                    else if ( (LA3_6==EOF||(LA3_6>=23 && LA3_6<=24)) ) {
+                        alt3=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -1556,11 +1556,11 @@ public class InternalTxtUMLParser extends AbstractInternalContentAssistParser {
                 if ( (LA3_3==RULE_ID) ) {
                     int LA3_6 = input.LA(3);
 
-                    if ( (LA3_6==EOF||(LA3_6>=23 && LA3_6<=24)) ) {
-                        alt3=2;
-                    }
-                    else if ( (LA3_6==26) ) {
+                    if ( (LA3_6==26) ) {
                         alt3=1;
+                    }
+                    else if ( (LA3_6==EOF||(LA3_6>=23 && LA3_6<=24)) ) {
+                        alt3=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -1584,11 +1584,11 @@ public class InternalTxtUMLParser extends AbstractInternalContentAssistParser {
                 if ( (LA3_4==RULE_ID) ) {
                     int LA3_6 = input.LA(3);
 
-                    if ( (LA3_6==EOF||(LA3_6>=23 && LA3_6<=24)) ) {
-                        alt3=2;
-                    }
-                    else if ( (LA3_6==26) ) {
+                    if ( (LA3_6==26) ) {
                         alt3=1;
+                    }
+                    else if ( (LA3_6==EOF||(LA3_6>=23 && LA3_6<=24)) ) {
+                        alt3=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -6051,31 +6051,31 @@ public class InternalTxtUMLParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageSectionDecl__Group_3__1__Impl"
-    // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2222:1: rule__MessageSectionDecl__Group_3__1__Impl : ( ( rule__MessageSectionDecl__ActorsAssignment_3_1 ) ) ;
+    // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2222:1: rule__MessageSectionDecl__Group_3__1__Impl : ( ( rule__MessageSectionDecl__MessagesAssignment_3_1 ) ) ;
     public final void rule__MessageSectionDecl__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2226:1: ( ( ( rule__MessageSectionDecl__ActorsAssignment_3_1 ) ) )
-            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2227:1: ( ( rule__MessageSectionDecl__ActorsAssignment_3_1 ) )
+            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2226:1: ( ( ( rule__MessageSectionDecl__MessagesAssignment_3_1 ) ) )
+            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2227:1: ( ( rule__MessageSectionDecl__MessagesAssignment_3_1 ) )
             {
-            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2227:1: ( ( rule__MessageSectionDecl__ActorsAssignment_3_1 ) )
-            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2228:1: ( rule__MessageSectionDecl__ActorsAssignment_3_1 )
+            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2227:1: ( ( rule__MessageSectionDecl__MessagesAssignment_3_1 ) )
+            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2228:1: ( rule__MessageSectionDecl__MessagesAssignment_3_1 )
             {
-             before(grammarAccess.getMessageSectionDeclAccess().getActorsAssignment_3_1()); 
-            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2229:1: ( rule__MessageSectionDecl__ActorsAssignment_3_1 )
-            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2229:2: rule__MessageSectionDecl__ActorsAssignment_3_1
+             before(grammarAccess.getMessageSectionDeclAccess().getMessagesAssignment_3_1()); 
+            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2229:1: ( rule__MessageSectionDecl__MessagesAssignment_3_1 )
+            // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2229:2: rule__MessageSectionDecl__MessagesAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__MessageSectionDecl__ActorsAssignment_3_1_in_rule__MessageSectionDecl__Group_3__1__Impl4464);
-            rule__MessageSectionDecl__ActorsAssignment_3_1();
+            pushFollow(FOLLOW_rule__MessageSectionDecl__MessagesAssignment_3_1_in_rule__MessageSectionDecl__Group_3__1__Impl4464);
+            rule__MessageSectionDecl__MessagesAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getMessageSectionDeclAccess().getActorsAssignment_3_1()); 
+             after(grammarAccess.getMessageSectionDeclAccess().getMessagesAssignment_3_1()); 
 
             }
 
@@ -7753,9 +7753,9 @@ public class InternalTxtUMLParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__MessageSectionDecl__MessagesAssignment_2"
 
 
-    // $ANTLR start "rule__MessageSectionDecl__ActorsAssignment_3_1"
-    // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2864:1: rule__MessageSectionDecl__ActorsAssignment_3_1 : ( ruleMessageDecl ) ;
-    public final void rule__MessageSectionDecl__ActorsAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__MessageSectionDecl__MessagesAssignment_3_1"
+    // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2864:1: rule__MessageSectionDecl__MessagesAssignment_3_1 : ( ruleMessageDecl ) ;
+    public final void rule__MessageSectionDecl__MessagesAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -7766,13 +7766,13 @@ public class InternalTxtUMLParser extends AbstractInternalContentAssistParser {
             // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2869:1: ( ruleMessageDecl )
             // ../com.frantz.txtuml.ui/src-gen/com/frantz/txtuml/ui/contentassist/antlr/internal/InternalTxtUML.g:2870:1: ruleMessageDecl
             {
-             before(grammarAccess.getMessageSectionDeclAccess().getActorsMessageDeclParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleMessageDecl_in_rule__MessageSectionDecl__ActorsAssignment_3_15762);
+             before(grammarAccess.getMessageSectionDeclAccess().getMessagesMessageDeclParserRuleCall_3_1_0()); 
+            pushFollow(FOLLOW_ruleMessageDecl_in_rule__MessageSectionDecl__MessagesAssignment_3_15762);
             ruleMessageDecl();
 
             state._fsp--;
 
-             after(grammarAccess.getMessageSectionDeclAccess().getActorsMessageDeclParserRuleCall_3_1_0()); 
+             after(grammarAccess.getMessageSectionDeclAccess().getMessagesMessageDeclParserRuleCall_3_1_0()); 
 
             }
 
@@ -7791,7 +7791,7 @@ public class InternalTxtUMLParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MessageSectionDecl__ActorsAssignment_3_1"
+    // $ANTLR end "rule__MessageSectionDecl__MessagesAssignment_3_1"
 
 
     // $ANTLR start "rule__ActorDecl__NameAssignment_0"
@@ -8287,7 +8287,7 @@ public class InternalTxtUMLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__MessageSectionDecl__Group_3__1_in_rule__MessageSectionDecl__Group_3__04378 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_23_in_rule__MessageSectionDecl__Group_3__0__Impl4406 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__MessageSectionDecl__Group_3__1__Impl_in_rule__MessageSectionDecl__Group_3__14437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__MessageSectionDecl__ActorsAssignment_3_1_in_rule__MessageSectionDecl__Group_3__1__Impl4464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__MessageSectionDecl__MessagesAssignment_3_1_in_rule__MessageSectionDecl__Group_3__1__Impl4464 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActorDecl__Group__0__Impl_in_rule__ActorDecl__Group__04498 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__ActorDecl__Group__1_in_rule__ActorDecl__Group__04501 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActorDecl__NameAssignment_0_in_rule__ActorDecl__Group__0__Impl4528 = new BitSet(new long[]{0x0000000000000002L});
@@ -8334,7 +8334,7 @@ public class InternalTxtUMLParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleActorDecl_in_rule__ActorSectionDecl__ActorsAssignment_25669 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActorDecl_in_rule__ActorSectionDecl__ActorsAssignment_3_15700 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMessageDecl_in_rule__MessageSectionDecl__MessagesAssignment_25731 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMessageDecl_in_rule__MessageSectionDecl__ActorsAssignment_3_15762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMessageDecl_in_rule__MessageSectionDecl__MessagesAssignment_3_15762 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__ActorDecl__NameAssignment_05793 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__ActorDecl__ClassRefAssignment_15828 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__MessageDecl__NameAssignment_05863 = new BitSet(new long[]{0x0000000000000002L});

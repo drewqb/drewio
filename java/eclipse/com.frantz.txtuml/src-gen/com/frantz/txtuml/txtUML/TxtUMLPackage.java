@@ -467,22 +467,13 @@ public interface TxtUMLPackage extends EPackage
   int MESSAGE_SECTION_DECL__MESSAGES = SEQUENCE_SECTION_DECL_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Actors</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MESSAGE_SECTION_DECL__ACTORS = SEQUENCE_SECTION_DECL_FEATURE_COUNT + 1;
-
-  /**
    * The number of structural features of the '<em>Message Section Decl</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MESSAGE_SECTION_DECL_FEATURE_COUNT = SEQUENCE_SECTION_DECL_FEATURE_COUNT + 2;
+  int MESSAGE_SECTION_DECL_FEATURE_COUNT = SEQUENCE_SECTION_DECL_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.frantz.txtuml.txtUML.impl.ActorDeclImpl <em>Actor Decl</em>}' class.
@@ -901,17 +892,6 @@ public interface TxtUMLPackage extends EPackage
   EReference getMessageSectionDecl_Messages();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.frantz.txtuml.txtUML.MessageSectionDecl#getActors <em>Actors</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Actors</em>'.
-   * @see com.frantz.txtuml.txtUML.MessageSectionDecl#getActors()
-   * @see #getMessageSectionDecl()
-   * @generated
-   */
-  EReference getMessageSectionDecl_Actors();
-
-  /**
    * Returns the meta object for class '{@link com.frantz.txtuml.txtUML.ActorDecl <em>Actor Decl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1302,14 +1282,6 @@ public interface TxtUMLPackage extends EPackage
      * @generated
      */
     EReference MESSAGE_SECTION_DECL__MESSAGES = eINSTANCE.getMessageSectionDecl_Messages();
-
-    /**
-     * The meta object literal for the '<em><b>Actors</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MESSAGE_SECTION_DECL__ACTORS = eINSTANCE.getMessageSectionDecl_Actors();
 
     /**
      * The meta object literal for the '{@link com.frantz.txtuml.txtUML.impl.ActorDeclImpl <em>Actor Decl</em>}' class.

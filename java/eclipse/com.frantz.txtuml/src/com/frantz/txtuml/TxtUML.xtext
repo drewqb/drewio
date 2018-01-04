@@ -45,7 +45,7 @@ SequenceSectionDecl:
 ActorSectionDecl:
 	'actors' ':' actors+=ActorDecl (',' actors+=ActorDecl )* ';';	
 MessageSectionDecl:
-	'messages' ':' messages+=MessageDecl (',' actors+=MessageDecl )* ';';
+	'messages' ':' messages+=MessageDecl (',' messages+=MessageDecl )* ';';
 		
 	
 ActorDecl:

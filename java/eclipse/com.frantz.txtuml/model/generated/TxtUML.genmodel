@@ -59,7 +59,6 @@
     </genClasses>
     <genClasses ecoreClass="TxtUML.ecore#//MessageSectionDecl">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TxtUML.ecore#//MessageSectionDecl/messages"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TxtUML.ecore#//MessageSectionDecl/actors"/>
     </genClasses>
     <genClasses ecoreClass="TxtUML.ecore#//ActorDecl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TxtUML.ecore#//ActorDecl/name"/>
