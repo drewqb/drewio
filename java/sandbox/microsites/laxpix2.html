@@ -10,13 +10,22 @@
     <title>MG Lax 2016 Pictures</title>
 </head>	
 <script>
-	var summit = {m_name:"summit",m_id:"all_slides", m_start:"4113", m_end:"4241", m_Slide:"4241", m_nUrl:"http://vizibolic.com/lax2016/"};
-	var rumson = {m_name:"rumson",m_id:"all_slides", m_start:"4241", m_end:"4331", m_Slide:"4331", m_nUrl:"http://vizibolic.com/lax2016/rumson/"};
-	var m_Games = [summit,rumson];
+	var summit = {m_name:"summit",m_title:"Summit", m_id:"all_slides", m_start:"4113", m_end:"4241", m_Slide:"4241", m_nUrl:"http://vizibolic.com/lax2016/summit/"};
+	var rumson = {m_name:"rumson",m_title:"Rumson", m_id:"all_slides", m_start:"4241", m_end:"4331", m_Slide:"4331", m_nUrl:"http://vizibolic.com/lax2016/rumson/"};
+	var hopewell = {m_name:"hopewell",m_title:"Hopewell Valley",m_id:"all_slides", m_start:"4341", m_end:"4391", m_Slide:"4341", m_nUrl:"http://vizibolic.com/lax2016/hopewell/"};
+	var cherokee = {m_name:"cherokee",m_title:"Cherokee",m_id:"all_slides", m_start:"4393", m_end:"4474", m_Slide:"4393", m_nUrl:"http://vizibolic.com/lax2016/cherokee/"};
+	var gcounsel = {m_name:"goodcounsel",m_title:"Good Counsel",m_id:"all_slides", m_start:"4612", m_end:"4655", m_Slide:"4612", m_nUrl:"http://vizibolic.com/lax2016/goodcounsel/"};
+	var manasquan = {m_name:"manasquan",m_title:"manasquan",m_id:"all_slides", m_start:"4688", m_end:"4751", m_Slide:"4751", m_nUrl:"http://vizibolic.com/lax2016/manasquan/"};
+	var prep = {m_name:"prep",m_title:"Lawrenceville",m_id:"all_slides", m_start:"4752", m_end:"4876", m_Slide:"4752", m_nUrl:"http://vizibolic.com/lax2016/prep/"};
+	var sufferen = {m_name:"sufferen",m_title:"Sufferen",m_id:"all_slides", m_start:"4877", m_end:"4923", m_Slide:"4877", m_nUrl:"http://vizibolic.com/lax2016/sufferen/"};
+	var senior = {m_name:"senior",m_title:"Senior Day",m_id:"all_slides", m_start:"4801", m_end:"4829", m_Slide:"4801", m_nUrl:"http://vizibolic.com/lax2016/senior/"};
+	var senior2 = {m_name:"senior2",m_title:"Senior Day(2)",m_id:"all_slides", m_start:"1606", m_end:"1664", m_Slide:"1606", m_nUrl:"http://vizibolic.com/lax2016/senior2/"};
+	var agnes = {m_name:"agnes",m_title:"Agnes Irwin",m_id:"all_slides", m_start:"4656", m_end:"4687", m_Slide:"4656", m_nUrl:"http://vizibolic.com/lax2016/agnes/"};
+	var allentown = {m_name:"allentown",m_title:"Allentown",m_id:"all_slides", m_start:"4927", m_end:"4957", m_Slide:"4927", m_nUrl:"http://vizibolic.com/lax2016/allentown/"};
+	var seneca = {m_name:"seneca",m_title:"Seneca",m_id:"all_slides", m_start:"4968", m_end:"5025", m_Slide:"4968", m_nUrl:"http://vizibolic.com/lax2016/seneca/"};
+	var m_Games = [summit,rumson,hopewell,cherokee,gcounsel,manasquan,agnes,prep,senior,senior2,sufferen,allentown,seneca];
 	
 	var m_Game=m_Games[0];
-	//var m_nUrl = "http://vizibolic.com/lax2016/"; 
-	//var m_nUrl = "C:/Users/drew/Desktop/host/lax/images/";
 	
 	function openLink(theGame)
     {
@@ -50,26 +59,45 @@
 		
 	
     }
+	
 	function selectGame()
 	{
 		var sel = document.getElementById("m_Selection");
-		var game = sel.options[sel.selectedIndex].value;
+		var head = document.getElementById("m_Heading");
+		
+		var game = sel.options[sel.selectedIndex].text;
 		for(i=0;i<m_Games.length;++i)
 		{
-			if(m_Games[i].m_name==game)
+			if(m_Games[i].m_title==game)
 			{
 				m_Game=m_Games[i];
 				m_Game.m_Slide = m_Game.m_start-1;
+				head.innerHTML=m_Game.m_title;
 				showSlide(m_Game,false);
 				return;
 			}
 		}
 	
 	}
+	function handlePixLoadPage(theGame, bVal)
+	{
+		var sel = document.getElementById("m_Selection");
+		for(i=0;i<m_Games.length;++i)
+		{
+			var c = document.createElement("option");
+			c.text = m_Games[i].m_name;
+			c.innerHTML = m_Games[i].m_title;
+			sel.options.add(c);
+			
+		}
+		showSlide(theGame,bVal);
+		var head = document.getElementById("m_Heading");
+		head.innerHTML=theGame.m_title;
+	}
 </script>
 
 
-<body onload="showSlide(summit,false)">
+<body onload="handlePixLoadPage(summit,false)">
 	<header class="Drew">
     	<h1 class="name" title="MG Lax 2016 Pictures">MG Lax 2016</h1>
       
@@ -82,14 +110,10 @@
 	        	
     </section>
   <section id="section">
-    	<h1>Summit at Moorestown</h1>
+    	<h1 id="m_Heading"></h1>
         <p>
 		</br>
-		<select id="m_Selection" onchange="selectGame()" style="width: 150px; ">
-			<option value="summit">Summit</option>
-			<option value="rumson">Rumson</option>
-			
-		</select>
+		<select id="m_Selection" onchange="selectGame()" style="width: 150px; "></select>
 		</br>
 		<img src="previous.gif" onclick="showSlide(m_Game,false);" title="Previous" width="50" height="50" ></img>
 		<img src="next.gif" onclick="showSlide(m_Game,true);" title="Next" width="50" height="50" ></img>

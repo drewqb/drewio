@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="MG Lax 2016 Pictures">
+  <meta name="author" content="MG Lax 2016 Pictures">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+  <link rel="stylesheet" type="text/css" href="df_style.css">
+    <title>MG Lax 2016 Pictures</title>
+</head>	
+<script>
+	var summit = {m_id:"summit_slides", m_start:"4113", m_end:"4241", m_Slide:"4241", m_nUrl:"C:/Users/drew/Desktop/host/lax/images/"};
+	
+	var m_nUrl = "http://vizibolic.com/lax2016/"; 
+	//var m_nUrl = "C:/Users/drew/Desktop/host/lax/images/";
+	
+	function openLink(theGame)
+    {
+		var nm = "IMG_" + theGame.m_Slide + ".JPG";
+		var pic = theGame.m_nUrl+nm; 
+		window.open(pic,nm);
+		window.open(pic);
+	}
+	
+	function showSlide(theGame, bNext)
+    {
+		if(bNext)
+		{
+			++theGame.m_Slide;
+		}
+		else 
+		{
+			--theGame.m_Slide;
+		}
+		if(theGame.m_Slide > theGame.m_end-1 || theGame.m_Slide < theGame.m_start)
+		{
+			theGame.m_Slide=theGame.m_start;
+		}
+		
+		var theSection = document.getElementById(theGame.m_id);
+		if(theSection==null) return;
+		var nm = "IMG_" + theGame.m_Slide + ".JPG";
+		var pic = theGame.m_nUrl+nm; 
+		theSection.src= pic;
+		theSection.title= nm;
+		
+	
+    }
+</script>
+
+
+<body onload="showSlide(summit,false)">
+	<header class="Drew">
+    	<h1 class="name" title="MG Lax 2016 Pictures">MG Lax 2016</h1>
+      
+    </header>
+
+	<section id="section">
+    	<figure>
+  				<img src="http://www.moorestownglax.com/images/team_pix/team.jpg"  alt="" >
+		</figure>
+	        	
+    </section>
+  <section id="section">
+    	<h1>Summit at Moorestown</h1>
+        <p>
+					
+		<img src="" id="summit_slides" onClick="showSlide(summit,false);" alt="" width="600" height="400">
+		</br>
+		<img src="previous.gif" onclick="showSlide(summit,false);" title="Previous" width="50" height="50" ></img>
+		<img src="next.gif" onclick="showSlide(summit,true);" title="Next" width="50" height="50" ></img>
+		<img src="download.gif" onclick="openLink(summit);" title="Open" width="50" height="50" ></img>
+		
+		</p>
+        	
+    </section>    
+ 
+    
+
+</body>
+</html>
